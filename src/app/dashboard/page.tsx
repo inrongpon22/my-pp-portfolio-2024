@@ -2,7 +2,7 @@
 import { Segmented } from "antd";
 import axios from "axios";
 import React, { useCallback, useEffect, useMemo, useState } from "react";
-import { Diagram } from "react-easy-diagram";
+// handle diagram
 import ReactFlow, {
   addEdge,
   MiniMap,
@@ -11,90 +11,98 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   Position,
+  ConnectionMode,
+  MarkerType,
 } from "reactflow";
+import FloatingNode from "@/components/dashboard/diagram/FloatingNode";
+import SimpleFloatingEdge from "@/components/dashboard/diagram/SimpleFloatingEdge";
 
 import "reactflow/dist/style.css";
 
-const onInit = (reactFlowInstance: any) =>
-  console.log("flow loaded:", reactFlowInstance);
+const nodeTypes = {
+  floatingNode: FloatingNode,
+};
+
+const edgeTypes = {
+  floating: SimpleFloatingEdge,
+};
 
 const Dashboard = () => {
-  const [edgeType, setEdgeType] = useState<string>("default");
+  // const [edgeType, setEdgeType] = useState<string>("default");
   const [progress, setProgress] = useState<number>(0);
+  const [isShowHandle, setIsShowHandle] = useState<boolean>(true);
 
-  const initialNodes:any = [
+  const initialNodes: any = [
     {
       id: "1",
-      type: "input",
+      type: "floatingNode",
       data: {
         label: "Parent Node",
+        isShowHandle: isShowHandle,
       },
       position: { x: 250, y: 0 },
     },
     {
       id: "2",
+      type: "floatingNode",
       data: {
         label: "Child of Parent 1",
+        isShowHandle: isShowHandle,
       },
       position: { x: 100, y: 100 },
-      sourcePosition: Position.Left,
-      targetPosition: Position.Left,
     },
     {
       id: "3",
-      // type: "output",
+      type: "floatingNode",
       data: {
         label: "Child of Parent 2",
+        isShowHandle: isShowHandle,
       },
       position: { x: 400, y: 100 },
-      sourcePosition: Position.Left,
-      targetPosition: Position.Left,
     },
     {
       id: "4",
-      // type: "output",
+      type: "floatingNode",
       data: {
         label: "Child of Node 1-1",
+        isShowHandle: isShowHandle,
       },
       position: { x: 75, y: 200 },
-      sourcePosition: Position.Left,
-      targetPosition: Position.Left,
     },
     {
       id: "5",
-      // type: "output",
+      type: "floatingNode",
       data: {
         label: "Child of Node 1-2",
+        isShowHandle: isShowHandle,
       },
       position: { x: 50, y: 250 },
-      sourcePosition: Position.Left,
-      targetPosition: Position.Left,
     },
   ];
 
-  const initialEdges = [
+  const initialEdges: any = [
     {
       id: "e1-2",
       source: "1",
       target: "2",
       label: "5 sec",
       animated: true,
-      type: edgeType,
+      type: "floating",
     },
-    { id: "e1-3", source: "1", target: "3", type: edgeType },
+    { id: "e1-3", source: "1", target: "3", type: "floating" },
     {
       id: "e2-4",
       source: "2",
       target: "4",
       label: "10 sec",
-      type: edgeType,
+      type: "floating",
     },
     {
       id: "e2-5",
       source: "2",
       target: "5",
       label: "2 sec",
-      type: edgeType,
+      type: "floating",
     },
   ];
 
@@ -102,7 +110,17 @@ const Dashboard = () => {
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   const onConnect = useCallback(
-    (params: any) => setEdges((eds) => addEdge(params, eds)),
+    (params: any) =>
+      setEdges((eds) =>
+        addEdge(
+          {
+            ...params,
+            type: "floating",
+            markerEnd: { type: MarkerType.Arrow },
+          },
+          eds
+        )
+      ),
     []
   );
 
@@ -133,47 +151,75 @@ const Dashboard = () => {
     );
   };
 
-  useMemo(() => {
-    setEdges(initialEdges);
-  }, [edgeType]);
+  // useMemo(() => {
+  //   setEdges(initialEdges);
+  // }, [edgeType]);
 
-  // console.log(progress)
+  // useMemo(() => {
+  //   setNodes(initialNodes);
+  // }, [isShowHandle]);
 
   return (
     <div className="w-full bg-slate-800 text-white">
       <div className="p-10">
         <h1>Dashboard</h1>
-        <div className="flex items-center">
+        {/* <div className="flex items-center">
           <label htmlFor="" className="pe-10 font-bold">
             Edge Type:{" "}
           </label>
           <Segmented
             value={edgeType}
-            options={["smoothstep", "step", "default", "straight"]}
+            options={["smoothstep", "step", "default", "straight", "floating"]}
             onChange={(value) => {
               setEdgeType(value); // string
             }}
           />
+        </div> */}
+        <div className="flex items-center mt-3">
+          <label htmlFor="" className="pe-10 font-bold">
+            Show Handle:{" "}
+          </label>
+          <Segmented
+            value={String(isShowHandle)}
+            options={["true", "false"]}
+            onChange={(value) => {
+              setNodes((prev: any) =>
+                prev.map((item: any) => {
+                  return {
+                    ...item,
+                    data: {
+                      ...item.data,
+                      isShowHandle: value === "true" ? true : false,
+                    },
+                  };
+                })
+              );
+              setIsShowHandle(value === "true" ? true : false); // boolean
+            }}
+          />
         </div>
-        <button className="p-3 bg-blue-700 rounded-md" onClick={fetchAPI}>
+        {/* <button className="p-3 bg-blue-700 rounded-md" onClick={fetchAPI}>
           Hello world
         </button>
-        <div>Progress: {progress}%</div>
+        <div>Progress: {progress}%</div> */}
       </div>
       {/* starts::ReactFlow */}
-      <ReactFlow
-        nodes={nodes}
-        edges={edgesWithUpdatedTypes}
-        onNodesChange={onNodesChange}
-        onEdgesChange={onEdgesChange}
-        onConnect={onConnect}
-        onInit={onInit}
-        fitView
-        // nodeTypes={nodeTypes}
-      >
-        <Controls />
-        <Background className="bg-slate-800" color="#eeee" gap={16} />
-      </ReactFlow>
+      <div className="simple-floatingedges">
+        <ReactFlow
+          nodes={nodes}
+          nodeTypes={nodeTypes}
+          edges={edgesWithUpdatedTypes}
+          edgeTypes={edgeTypes}
+          onNodesChange={onNodesChange}
+          onEdgesChange={onEdgesChange}
+          onConnect={onConnect}
+          fitView
+          connectionMode={ConnectionMode.Loose}
+        >
+          <Controls />
+          <Background className="bg-slate-800" color="#eeee" gap={16} />
+        </ReactFlow>
+      </div>
       {/* ends::ReactFlow */}
     </div>
   );
