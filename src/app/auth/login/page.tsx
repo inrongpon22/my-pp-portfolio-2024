@@ -74,7 +74,7 @@ const Login = () => {
       {/* begin::Heading */}
 
       {/* begin::Login options */}
-      <div className="grid grid-cols-2 gap-4 mb-9">
+      {/* <div className="grid grid-cols-2 gap-4 mb-9">
         <Button
           icon={
             <Image
@@ -83,11 +83,6 @@ const Login = () => {
               width={15}
               height={15}
             />
-            // <img
-            //   alt="Logo"
-            //   src="/media/svg/brand-logos/google-icon.svg"
-            //   className="h-[15px]"
-            // />
           }
         >
           Sign in with Google
@@ -108,11 +103,11 @@ const Login = () => {
         >
           Sign in with Apple
         </Button>
-      </div>
+      </div> */}
       {/* end::Login options */}
 
       {/* begin::Separator */}
-      <Divider plain>Or with email</Divider>
+      {/* <Divider plain>Or with email</Divider> */}
       {/* end::Separator */}
 
       {formik.status ? (
@@ -165,12 +160,10 @@ const Login = () => {
       {/* end::Form group */}
 
       {/* begin::Wrapper */}
-      <div className="mb-8 text-end">
-        {/* begin::Link */}
+      <div className="mb-8 text-end invisible">
         <Link href="/auth/forgot-password" className="text-blue-500 text-sm">
           Forgot Password ?
         </Link>
-        {/* end::Link */}
       </div>
       {/* end::Wrapper */}
 
@@ -189,7 +182,7 @@ const Login = () => {
       </div>
       {/* end::Action */}
 
-      <div className="text-gray-500 text-center fw-semibold fs-6">
+      <div className="text-gray-500 text-center fw-semibold fs-6 invisible">
         Not a Member yet?{" "}
         <Link href="/auth/registration" className="text-blue-500">
           Sign up
