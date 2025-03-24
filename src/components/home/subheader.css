@@ -1,32 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Figtree&display=swap");
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Figtree", sans-serif;
-}
-
-body {
-  display: grid;
-  place-content: center;
-  min-height: 100vh;
-  background: #000;
-} */
 
 .container {
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   gap: 1em;
-  width: 800px;
+  width: 60%;
   height: 500px;
   transition: all 400ms;
 }
-
-/* .container:hover .box {
-  filter: grayscale(100%) opacity(24%);
-} */
 
 .box {
   position: relative;

@@ -37,17 +37,15 @@ const HeaderWrapper = () => {
   const [current, setCurrent] = useState("home");
 
   return (
-    <div className="flex justify-center">
-      <div className="flex justify-between items-center w-2/3 bg-[#333] text-white py-2 px-4 my-5 rounded-full fixed z-50">
-        <div className="flex items-center">
-          <Anchor className="text-white" direction="horizontal" items={items} />
-        </div>
-        <Link href="/auth/login">
-          <Button type="primary" shape="round" className="bg-blue-500">
-            Login
-          </Button>
-        </Link>
+    <div className="flex justify-between items-center w-2/3 bg-[#333] text-white py-2 px-4 my-5 rounded-full fixed z-50">
+      <div className="flex items-center">
+        <Anchor className="text-white" direction="horizontal" items={items} />
       </div>
+      <Link href="/auth/login">
+        <Button type="primary" shape="round" className="bg-blue-500">
+          Login
+        </Button>
+      </Link>
     </div>
   );
 };

@@ -9,7 +9,38 @@
 
 const getProjectsData = [
   {
-    id: 1,
+    title: "Piika",
+    type: "Web design",
+    image: [],
+    previewImg: "/media/product-demos/piika/piika.png",
+    view: "",
+    source: "",
+  },
+  {
+    title: "Flowers",
+    type: "Web design",
+    image: [],
+    previewImg: "/media/product-demos/flowers/flowers.png",
+    view: "",
+    source: "",
+  },
+  {
+    title: "Meet More",
+    type: "Web design",
+    image: [],
+    previewImg: "/media/product-demos/meet-more/meetmore.png",
+    view: "",
+    source: "",
+  },
+  {
+    title: "John (Booking App)",
+    type: "Web design",
+    image: [],
+    previewImg: "/media/product-demos/john/booking.png",
+    view: "",
+    source: "",
+  },
+  {
     title: "ItrendX",
     type: "Web design",
     image: [],
@@ -18,7 +49,6 @@ const getProjectsData = [
     source: "",
   },
   {
-    id: 2,
     title: "FPPMS",
     type: "Web design",
     image: [],
@@ -27,7 +57,6 @@ const getProjectsData = [
     source: "",
   },
   {
-    id: 3,
     title: "Portfolio 2022",
     type: "Web design",
     image: [],
@@ -36,7 +65,6 @@ const getProjectsData = [
     source: "",
   },
   {
-    id: 4,
     title: "E-commerce",
     type: "Web design",
     image: [],

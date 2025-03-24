@@ -44,7 +44,7 @@ const Contact = () => {
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non eum
             enim rem, blanditiis magni quasi sit eos sequi perspiciatis nam.
           </p>
-          <div className="mt-5">
+          {/* <div className="mt-5">
             {contactIcons.map((item: any, index: number) => {
               return (
                 <Tooltip
@@ -62,7 +62,7 @@ const Contact = () => {
                 </Tooltip>
               );
             })}
-          </div>
+          </div> */}
         </div>
 
         <div className="grid grid-cols-2">
@@ -97,9 +97,17 @@ const Contact = () => {
           <div className="">
             <p className="text-2xl font-bold text-orange-400">Contact</p>
             <ul>
-              <li>+66xx xxx xxxx</li>
-              <li>example@gmail.com</li>
-              <li>github.com</li>
+              {/* <li>+66xx xxx xxxx</li> */}
+              <li>
+                <Link href="mailto:inrongpon22@gmail.com" target="_blank">
+                  inrongpon22@gmail.com
+                </Link>
+              </li>
+              <li>
+                <Link href="https://github.com/inrongpon22" target="_blank">
+                  Github
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

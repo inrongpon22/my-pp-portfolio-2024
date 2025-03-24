@@ -4,7 +4,7 @@ import React from "react";
 
 const WorkExperience = () => {
   return (
-    <section className="flex flex-col justify-center items-center mt-12 w-full">
+    <section className="flex flex-col justify-center items-center w-full">
       <span className="text-6xl font-bold mb-12">
         My Work<span className="text-orange-400"> Experience</span>
       </span>
@@ -36,28 +36,13 @@ const WorkExperience = () => {
               <div className="text-xl">
                 <span>March 2022 - December 2022</span>
               </div>
-            ), //
+            ),
             children: (
               <div className="mb-12">
                 <p className="text-lg font-bold">Practicing by myself</p>
               </div>
             ),
           },
-          //   {
-          //     dot: <ClockCircleOutlined style={{ fontSize: "16px" }} />,
-          //     children: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.`,
-          // },
-          //   {
-          //     color: "red",
-          //     children: "Network problems being solved 2015-09-01",
-          //   },
-          //   {
-          //     children: "Create a services site 2015-09-01",
-          //   },
-          //   {
-          //     dot: <ClockCircleOutlined style={{ fontSize: "16px" }} />,
-          //     children: "Technical testing 2015-09-01",
-          //   },
           {
             label: "January 2023 - March 2024",
             children: (
@@ -67,6 +52,18 @@ const WorkExperience = () => {
               </div>
             ),
             color: "#fb923c",
+          },
+          {
+            label: "April 2024 - Present",
+            children: (
+              <div className="">
+                <p className="text-lg font-bold">Front-End Developer</p>
+                <p>
+                  React, Tailwind, Nodejs, Express, Postgresql, Docker
+                </p>
+                <p>MEET SOFTWARE CO., at Chiang Mai, Thailand</p>
+              </div>
+            ),
           },
         ]}
       />
