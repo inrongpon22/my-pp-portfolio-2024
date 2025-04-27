@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const ProjectsWrapper = () => {
   return (
-    <section className="px-4">
+    <section id="projects" className="px-4">
       <div className=" w-full">
         <div className="">
           <h1 className="text-6xl">Projects</h1>

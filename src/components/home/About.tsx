@@ -17,7 +17,7 @@ const services = [
 
 const About = () => {
   return (
-    <div className="px-4">
+    <div id="about" className="px-4">
       <div
         id="services-background"
         className="flex flex-col justify-center items-center p-24 rounded-2xl"
