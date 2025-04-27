@@ -15,7 +15,7 @@ import Tools from '@/components/home/Tools'
 export default function Home() {
   return (
     <Suspense fallback={<Spin fullscreen />}>
-      <div className='relative w-full h-full'>
+      <div className='relative w-full h-full max-w-5xl mx-auto'>
         <div className='fixed top-0 left-1/2 transform -translate-x-1/2 w-full flex justify-center z-50'>
           <HeaderWrapper />
         </div>

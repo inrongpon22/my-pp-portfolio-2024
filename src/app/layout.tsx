@@ -20,7 +20,7 @@ export default function RootLayout({
 
   return (
     <html lang='en'>
-      <body className='h-full w-full flex flex-col items-center justify-between'>
+      <body>
         <main>{children}</main>
       </body>
     </html>

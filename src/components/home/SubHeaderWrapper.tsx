@@ -1,13 +1,19 @@
-"use client";
-import React from "react";
-import "./subheader.css";
+'use client'
+import React from 'react'
+import './subheader.css'
+import { Image } from 'antd'
 
 const SubHeaderWrapper = () => {
   return (
-    <div id="home" className="flex flex-col lg:flex-row justify-center items-center pt-28">
-      <div className="flex justify-center items-center lg:w-1/3 order-1 lg:order-2 lg:pb-0 pb-10">
-        <h1 className="text-8xl">
-          I&apos;m <span className="text-orange-400">Phanupong</span>, Front-End
+    <div id='home' className='flex flex-col items-center md:flex-row gap-10 mx-auto pt-28'>
+      <img
+        alt='profile'
+        src='https://placehold.co/52x52'
+        className='w-48 rounded-full object-cover'
+      />
+      <div className='lg:pb-0'>
+        <h1 className='text-center text-4xl'>
+          I&apos;m <span className='text-orange-400'>Phanupong</span>, Front-End
           Developer.
         </h1>
       </div>
@@ -43,7 +49,7 @@ const SubHeaderWrapper = () => {
         ></div>
       </div> */}
     </div>
-  );
-};
+  )
+}
 
-export default SubHeaderWrapper;
+export default SubHeaderWrapper
