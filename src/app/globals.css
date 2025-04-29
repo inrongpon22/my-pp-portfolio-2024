@@ -78,3 +78,18 @@
   text-align: center;
   width: 150px;
 }
+
+
+/* Add this to your existing globals.css */
+.glow-effect {
+  animation: glow 1.3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 3px #fb923c, 0 0 6px #fb923c;
+  }
+  to {
+    text-shadow: 0 0 5px #fb923c, 0 0 10px #fb923c, 0 0 20px #fb923c;
+  }
+}

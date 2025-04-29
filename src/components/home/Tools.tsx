@@ -70,7 +70,10 @@ const Tools = () => {
           )
         })}
       </div>
-      <p className='lg:order-2 order-1 text-6xl lg:mx-auto'>Tools</p>
+      <p className='lg:order-2 order-1 text-6xl font-bold lg:mx-auto'>
+        <span>Tool</span>
+        <span className='text-orange-400 text-shadow-orange-400 glow-effect'>s</span>
+      </p>
     </div>
   )
 }

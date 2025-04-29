@@ -1,7 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { Spin } from 'antd'
-import HeaderWrapper from '@/components/layout/header/HeaderWrapper'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Phanupong Portfolio',
@@ -19,7 +21,7 @@ export default function RootLayout({
   if (!children) return <Spin fullscreen />
 
   return (
-    <html lang='en'>
+    <html lang='en' className={inter.className}>
       <body>
         <main>{children}</main>
       </body>
