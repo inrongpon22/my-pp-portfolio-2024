@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import moment from "moment";
-import { Tooltip } from "antd";
-import Link from "next/link";
 import Contact from "@/components/home/Contact";
 
 const FooterWrapper = () => {

@@ -37,79 +37,44 @@ const Contact = () => {
       <span className="text-6xl font-bold">Get in touch</span>
 
       <Divider className="bg-white" />
-      <div className="grid grid-cols-2 leading-loose py-10">
+      <div className=" leading-loose">
         <div className="">
           <p>Lorem ipsum dolor sit amet.</p>
-          <p className="me-10">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non eum
-            enim rem, blanditiis magni quasi sit eos sequi perspiciatis nam.
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut harum
+            quae nihil sint aspernatur error, ad est explicabo! Amet aliquid
+            ducimus eveniet, modi cum sed cupiditate deserunt illo ratione
+            tenetur eaque temporibus nemo repudiandae, quia provident, earum
+            accusamus nulla quasi?
           </p>
-          {/* <div className="mt-5">
-            {contactIcons.map((item: any, index: number) => {
-              return (
-                <Tooltip
-                  key={index}
-                  title={item.title}
-                  className=" text-center"
-                >
-                  <Link
-                    href={item.url}
-                    target="_blank"
-                    className="mx-2 text-xl p-3"
-                  >
-                    {item.icon}
-                  </Link>
-                </Tooltip>
-              );
-            })}
-          </div> */}
         </div>
 
-        <div className="grid grid-cols-2">
-          <div className="">
-            <p className="text-2xl font-bold text-orange-400">Navigate</p>
-            <Anchor
-              className="unstyled-anchor"
-              items={[
-                {
-                  key: "home",
-                  href: "#home",
-                  title: "Home",
-                },
-                {
-                  key: "about",
-                  href: "#about",
-                  title: "About",
-                },
-                {
-                  key: "projects",
-                  href: "#projects",
-                  title: "Projects",
-                },
-                {
-                  key: "contact",
-                  href: "#contact",
-                  title: "Contact",
-                },
-              ]}
-            />
-          </div>
-          <div className="">
-            <p className="text-2xl font-bold text-orange-400">Contact</p>
-            <ul>
-              {/* <li>+66xx xxx xxxx</li> */}
-              <li>
-                <Link href="mailto:inrongpon22@gmail.com" target="_blank">
-                  inrongpon22@gmail.com
-                </Link>
-              </li>
-              <li>
-                <Link href="https://github.com/inrongpon22" target="_blank">
-                  Github
-                </Link>
-              </li>
-            </ul>
-          </div>
+        <div className="pt-10">
+          <p className="text-2xl font-bold text-orange-400 underline">
+            Contact
+          </p>
+          <ul>
+            <li className="flex items-center gap-2">
+              <span className="text-orange-400 font-bold">Email:</span>
+              <Link
+                href="mailto:inrongpon.phanupong2@gmail.com"
+                target="_blank"
+                className="hover:text-orange-400 transition-all duration-300"
+              >
+                inrongpon.phanupong2@gmail.com
+              </Link>
+            </li>
+            <li className="flex items-center gap-2">
+              <span className="text-orange-400 font-bold">Github:</span>
+              <Link
+                href="https://github.com/inrongpon22"
+                target="_blank"
+                className="hover:text-orange-400 transition-all duration-300"
+              >
+                Github
+              </Link>
+            </li>
+          </ul>
         </div>
       </div>
       <Divider className="bg-white" />
