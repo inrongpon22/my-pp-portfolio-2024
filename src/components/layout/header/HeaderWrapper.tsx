@@ -14,7 +14,7 @@ const items: AnchorLinkItemProps[] = [
   {
     key: 'about',
     href: '#about',
-    title: 'About',
+    title: 'About me',
   },
   {
     key: 'projects',
@@ -31,14 +31,14 @@ const items: AnchorLinkItemProps[] = [
 const HeaderWrapper = () => {
   return (
     <div className='w-2/3 flex justify-between items-center bg-[#333] text-white py-2 px-4 my-5 rounded-full fixed z-50'>
-      <div className='flex items-center'>
+      <div className='w-full flex items-center justify-center'>
         <Anchor className='text-white' direction='horizontal' items={items} />
       </div>
-      <Link href='/auth/login'>
+      {/* <Link href='/auth/login'>
         <Button type='primary' shape='round' className='bg-blue-500'>
           Login
         </Button>
-      </Link>
+      </Link> */}
     </div>
   )
 }
