@@ -27,6 +27,15 @@
       ],
       "@/media/*": [
         "./public/media/*"
+      ],
+      "@/services/*": [
+        "./src/services/*"
+      ],
+      "@/supabase/*": [
+        "./src/app/utils/supabase/*"
+      ],
+      "@/api/*": [
+        "./src/app/api/*"
       ]
     },
     "target": "ES2017"

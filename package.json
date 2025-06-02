@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@ant-design/icons": "^6.0.0",
+    "@supabase/ssr": "^0.6.1",
+    "@supabase/supabase-js": "^2.49.9",
     "antd": "^5.15.2",
     "axios": "^1.6.8",
     "clsx": "^2.1.0",
@@ -23,6 +25,7 @@
     "react-dom": "^18",
     "react-easy-diagram": "^0.11.3",
     "reactflow": "^11.10.4",
+    "swr": "^2.3.3",
     "three": "^0.174.0",
     "yup": "^1.4.0"
   },
