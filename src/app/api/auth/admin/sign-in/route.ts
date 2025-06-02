@@ -1,7 +1,7 @@
 import { createClient } from '@/supabase/client'
 import { comparePassword, generateToken } from '@/app/lib/with-auth'
 
-export async function POST(request: Request, response: Response) {
+export async function POST(request: Request) {
   const { email, password } = await request.json()
 
   if (!email || !password) {
