@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-
 import * as Yup from "yup";
 import clsx from "clsx";
 import { useFormik } from "formik";
@@ -8,6 +7,8 @@ import Link from "next/link";
 import { Button, Card, Divider, Input } from "antd";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { adminServices } from "@/services/AdminServices";
+import { toast } from "react-hot-toast";
 
 const loginSchema = Yup.object().shape({
   email: Yup.string()
@@ -23,7 +24,7 @@ const loginSchema = Yup.object().shape({
 
 const initialValues = {
   email: "admin@demo.com",
-  password: "demo",
+  password: "admin123",
 };
 
 const Login = () => {
@@ -37,22 +38,19 @@ const Login = () => {
     onSubmit: async (values, { setStatus, setSubmitting }) => {
       setLoading(true);
       try {
-        console.log(values);
-        await localStorage.setItem("token", "token");
-        await router.push("/dashboard");
-        // const {data: auth} = await login(values.email, values.password)
-        // saveAuth(auth)
-        // const {data: user} = await getUserByToken(auth.api_token)
-        // setCurrentUser(user)
-        // setTimeout(() => {
-        //   setLoading(false);
-        // }, 3000);
+        const res = await adminServices.signInWithEmail(values.email, values.password)
+        console.log('[res]', res)
+
+        localStorage.setItem('admin_token', res.token)
+
+        // await adminServices.signUpWithEmail(values.email, values.password)
+        toast.success("User created successfully")
       } catch (error) {
+        toast.error("Something went wrong, please try again")
         console.error(error);
-        // saveAuth(undefined)
-        // setStatus('The login details are incorrect')
-        setSubmitting(false);
+      } finally {
         setLoading(false);
+        setSubmitting(false);
       }
     },
   });
@@ -60,9 +58,8 @@ const Login = () => {
   return (
     <form
       className="form w-100"
-      // onSubmit={formik.handleSubmit}
+      onSubmit={formik.handleSubmit}
       noValidate
-      id="kt_login_signin_form"
     >
       {/* begin::Heading */}
       <div className="text-center mb-11">
@@ -110,7 +107,7 @@ const Login = () => {
       {/* <Divider plain>Or with email</Divider> */}
       {/* end::Separator */}
 
-      {formik.status ? (
+      {/* {formik.status ? (
         <div className="mb-lg-15 alert alert-danger">
           <div className="alert-text font-weight-bold">{formik.status}</div>
         </div>
@@ -119,7 +116,7 @@ const Login = () => {
           Use account <strong>admin@demo.com</strong> and password{" "}
           <strong>demo</strong> to continue.
         </Card>
-      )}
+      )} */}
 
       {/* begin::Form group */}
       <div className="fv-row mb-3">

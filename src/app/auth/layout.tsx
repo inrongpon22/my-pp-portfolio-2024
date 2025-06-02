@@ -3,6 +3,7 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 import Image from "next/image";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "Login",
@@ -96,6 +97,7 @@ const AuthLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
         {/* end::Content */}
       </div>
       {/* end::Aside */}
+      <Toaster position="top-right" />
     </div>
   );
 };

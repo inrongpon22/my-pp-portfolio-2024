@@ -36,6 +36,9 @@
       ],
       "@/api/*": [
         "./src/app/api/*"
+      ],
+      "@/lib/*": [
+        "./src/app/lib/*"
       ]
     },
     "target": "ES2017"
