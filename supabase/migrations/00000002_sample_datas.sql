@@ -13,7 +13,7 @@ INSERT INTO
 VALUES
   (
     'admin',
-    'admin@example.com',
+    'admin@gmail.com',
     'Admin first_name',
     'Admin last_name',
     '1234567890',
@@ -36,7 +36,7 @@ INSERT INTO
 VALUES
   (
     'super_admin',
-    'super_admin@example.com',
+    'super_admin@gmail.com',
     'Super admin first_name',
     'Super admin last_name',
     '0987654321',

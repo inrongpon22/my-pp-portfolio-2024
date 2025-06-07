@@ -15,7 +15,7 @@ export async function POST(request: Request) {
 
     // check exist admin by email
     const { data: admin } = await supabase
-      .from('admin_users')
+      .from('admins')
       .select('id, email, password_hashed')
       .eq('email', email)
       .single()
@@ -44,7 +44,7 @@ export async function POST(request: Request) {
 
     console.log('[token]', token)
 
-    const { data: session, error: sessionError } = await supabase
+    const { error: sessionError } = await supabase
       .from('admin_sessions')
       .insert({
         admin_id: admin.id,
