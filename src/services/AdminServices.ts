@@ -1,4 +1,3 @@
-import { createClient } from '@/app/utils/supabase/client'
 import axios from 'axios'
 
 export const adminServices = {

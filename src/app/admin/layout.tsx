@@ -7,8 +7,8 @@ import Sidebar from './Sidebar'
 import Navbar from './Navbar'
 
 export const metadata: Metadata = {
-  title: 'Phanupong Portfolio',
-  description: 'Phanupong Portfolio',
+  title: 'Admin',
+  description: 'Admin',
   icons: {
     icon: '/icon.svg',
   },
@@ -19,6 +19,7 @@ export default function AdminLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+
   if (!children) return <Spin fullscreen />
 
   return (
