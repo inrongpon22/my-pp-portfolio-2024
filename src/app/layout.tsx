@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { Spin } from 'antd'
 import { Inter } from 'next/font/google'
+import { Toaster } from 'react-hot-toast'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang='en' className={inter.className}>
       <body>
         <main>{children}</main>
+        <Toaster position='top-right' />
       </body>
     </html>
   )

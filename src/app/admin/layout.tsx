@@ -21,10 +21,8 @@ export default function AdminLayout({
   if (!children) return <Spin fullscreen />
 
   return (
-    <html lang='en' className={inter.className}>
-      <body>
-        <main>{children}</main>
-      </body>
-    </html>
+    <div className={inter.className}>
+      <main>{children}</main>
+    </div>
   )
 }

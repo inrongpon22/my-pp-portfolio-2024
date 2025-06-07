@@ -1,72 +1,119 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import Link from 'next/link'
-import { Button, Card, Divider, Input } from 'antd'
-import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { adminServices } from '@/services/AdminServices'
 import { toast } from 'react-hot-toast'
-import { ArrowLeftOutlined } from '@ant-design/icons'
+import { ArrowLeftOutlined, LoginOutlined } from '@ant-design/icons'
 import { useForm } from 'react-hook-form'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
-const initialValues = {
-  email: 'admin@demo.com',
-  password: 'admin123',
+interface LoginForm {
+  email: string
+  password: string
 }
+
+const LoginSchema = z.object({
+  email: z.string().min(1, { message: 'Email is required' }),
+  password: z.string().min(1, { message: 'Password is required' }),
+})
 
 const Login = () => {
   const router = useRouter()
-  const [loading, setLoading] = useState<boolean>(false)
 
-  const { register, handleSubmit, formState: { errors } } = useForm()
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    formState: { errors, isSubmitting, isLoading },
+  } = useForm<LoginForm>({
+    defaultValues: {
+      email: '',
+      password: '',
+    },
+    resolver: zodResolver(LoginSchema),
+  })
 
-  const onSubmit = (data: any) => {
-    console.log(data)
+  const onSubmit = async (data: LoginForm) => {
+    try {
+      const res = await adminServices.signInWithEmail(data.email, data.password)
+      localStorage.setItem('token', res.token)
+      toast.success('Login successful')
+      router.push('/admin/dashboard')
+    } catch (error) {
+      console.log(error)
+      toast.error('Invalid email or password')
+    }
   }
 
+  useEffect(() => {
+    const token = localStorage.getItem('token')
+    if (token) {
+      router.push('/admin/dashboard')
+    }
+  }, [router])
+  
+  console.log(errors)
+
   return (
-    <section className='max-w-4xl mx-auto border rounded-lg p-10'>
-      <Link href='/' className='text-black bg-slate-100 p-1 rounded'>
-        <ArrowLeftOutlined />
+    <section className='max-w-md relative text-center border rounded-lg p-10 shadow-lg hover:shadow-xl transition-all duration-300 mx-auto'>
+      <Link
+        href='/'
+        className='absolute top-10 left-10 text-black bg-slate-100 rounded-full hover:bg-slate-200 transition-all duration-300'
+      >
+        <ArrowLeftOutlined className='text-xl p-2' />
       </Link>
-      <form onSubmit={handleSubmit(onSubmit)} noValidate>
-        {/* begin::Heading */}
-        <div className='text-center mb-11'>
-          <h1 className='text-black font-bold mb-3'>Sign In</h1>
-        </div>
-        {/* begin::Heading */}
-
-        {/* begin::Form group */}
+      <div className='flex flex-col items-center justify-center gap-2 mb-10'>
+        <LoginOutlined className='text-2xl border rounded-xl p-4' />
+        <h1 className='text-2xl font-bold'>Sign In with email</h1>
+        <p className='text-sm text-gray-500'>
+          Please enter your email and password to sign in
+        </p>
+      </div>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className='flex flex-col gap-4'
+      >
         <div className='fv-row mb-3'>
-          <Input
+          <input
+            disabled={isSubmitting || isLoading}
             placeholder='Email'
-            disabled={loading}
+            {...register('email')}
+            className={clsx(
+              'w-full p-2 border rounded-md',
+              errors.email && 'border-red-500'
+            )}
           />
+          {errors.email && (
+            <p className='text-red-500 text-start'>{errors.email.message}</p>
+          )}
         </div>
-        {/* end::Form group */}
-
-        {/* begin::Form group */}
         <div className='fv-row mb-3'>
-          <Input
+          <input
             type='password'
-            disabled={loading}
+            placeholder='Password'
+            disabled={isSubmitting || isLoading}
+            {...register('password')}
+            className={clsx(
+              'w-full p-2 border rounded-md',
+              errors.password && 'border-red-500'
+            )}
           />
+          {errors.password && (
+            <p className='text-red-500 text-start'>{errors.password.message}</p>
+          )}
         </div>
-        {/* end::Form group */}
-
-        {/* begin::Action */}
-        <div className='grid mb-10'>
-          <Button
-            // type="primary"
-            id='kt_sign_in_submit'
-            size='large'
-            loading={loading}
-          >
-            {!loading ? 'Sign In' : 'Please wait...'}
-          </Button>
-        </div>
-        {/* end::Action */}
+        <button
+          type='submit'
+          className={clsx(
+            'w-full bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-md',
+            isSubmitting || isLoading && 'opacity-50 cursor-not-allowed'
+          )}
+        >
+          {!isSubmitting && !isLoading ? 'Sign In' : 'Please wait...'}
+        </button>
       </form>
     </section>
   )

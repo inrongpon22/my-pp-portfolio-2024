@@ -1,11 +1,18 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useInstruments } from '@/api/instruments/hooks'
+import { useRouter } from 'next/navigation'
 
 const Dashboard = () => {
+  const token = localStorage.getItem('token')
+  const router = useRouter()
   const { data, error, isLoading, mutate } = useInstruments()
 
-  console.log(data)
+  useEffect(() => {
+    if (!token) {
+      router.push('/auth/login')
+    }
+  }, [token, router])
 
   return (
     <div>
