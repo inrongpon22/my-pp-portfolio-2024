@@ -39,6 +39,9 @@
       ],
       "@/lib/*": [
         "./src/app/lib/*"
+      ],
+      "@/contexts/*": [
+        "./src/app/contexts/*"
       ]
     },
     "target": "ES2017"

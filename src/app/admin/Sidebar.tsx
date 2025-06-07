@@ -35,7 +35,7 @@ const Sidebar = () => {
         <Link
           href={menu.href}
           key={menu.label}
-          className={clsx('hover:text-white rounded-md font-bold p-2', {
+          className={clsx('hover:text-white rounded-md font-bold p-2 truncate', {
             'text-[#FF7F50] bg-gray-100 border-l-4 border-l-[#FF7F50]':
               menu.href === pathname,
           })}

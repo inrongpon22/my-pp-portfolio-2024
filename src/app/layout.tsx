@@ -3,7 +3,6 @@ import './globals.css'
 import { Spin } from 'antd'
 import { Inter } from 'next/font/google'
 import { Toaster } from 'react-hot-toast'
-import { AuthProvider } from './contexts/AuthContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -25,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang='en' className={inter.className}>
       <body>
-        <AuthProvider>{children}</AuthProvider>
+        <div>{children}</div>
         <Toaster position='top-right' />
       </body>
     </html>

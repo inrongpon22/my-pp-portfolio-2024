@@ -49,7 +49,7 @@ export async function POST(request: Request) {
       .insert({
         admin_id: admin.id,
         session_token: token,
-        expires_at: new Date(Date.now() + 60 * 60 * 24 * 7), // 7 days in seconds
+        expires_at: new Date(Date.now() + (1000 * 60 * 60 * 24 * 7)).toISOString(), // 7 days in seconds
       })
 
     if (sessionError) {
