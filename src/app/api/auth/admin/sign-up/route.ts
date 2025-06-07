@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     const supabase = createClient()
 
     const { data: existingUser } = await supabase
-      .from('admin_users')
+      .from('admins')
       .select('*')
       .eq('email', email)
       .single()
@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const hashedPassword = await hashPassword(password)
 
     const { error: newUserError } = await supabase
-      .from('admin_users')
+      .from('admins')
       .insert({
         role: 'super_admin',
         email: email,
@@ -46,7 +46,10 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    return new Response(JSON.stringify('User created successfully'), {
+    return new Response(JSON.stringify({
+      success: true,
+      message: 'sign-up admin success',
+    }), {
       status: 200,
     })
   } catch (error) {
