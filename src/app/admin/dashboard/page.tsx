@@ -1,18 +1,20 @@
 'use client'
 import React, { useEffect } from 'react'
-import { useInstruments } from '@/api/instruments/hooks'
 import { useRouter } from 'next/navigation'
 
 const Dashboard = () => {
-  const token = localStorage.getItem('token')
+  // const token = localStorage?.getItem('token')
   const router = useRouter()
-  const { data, error, isLoading, mutate } = useInstruments()
 
   useEffect(() => {
-    if (!token) {
-      router.push('/auth/login')
+    if (typeof window !== 'undefined') {
+      // This code will only run in the browser
+      const token = localStorage.getItem('token')
+      if (!token) {
+        router.push('/auth/login')
+      }
     }
-  }, [token, router])
+  }, []);
 
   return (
     <div>

@@ -18,10 +18,12 @@ const ProjectsWrapper = () => {
               key={index}
               hoverable
               cover={
-                <img
+                <Image
                   alt={item.title}
                   src={item.previewImg}
                   className="w-full h-[200px] object-cover"
+                  width={100}
+                  height={100}
                 />
               }
               className="border-2"

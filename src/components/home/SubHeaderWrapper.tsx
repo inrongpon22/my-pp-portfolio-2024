@@ -6,10 +6,12 @@ import { Image } from 'antd'
 const SubHeaderWrapper = () => {
   return (
     <div id='home' className='flex flex-col items-center md:flex-row gap-10 mx-auto pt-28'>
-      <img
+      <Image
         alt='profile'
         src='https://placehold.co/52x52'
         className='w-48 rounded-full object-cover'
+        width={100}
+        height={100}
       />
       <div className='lg:pb-0'>
         <h1 className='text-center text-4xl'>
