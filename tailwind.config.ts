@@ -18,6 +18,10 @@ const config: Config = {
         'orange-500': '0 0 10px var(--tw-shadow-color, #f97316), 0 0 20px var(--tw-shadow-color, #f97316)',
         'glow': '0 0 10px var(--tw-shadow-color, currentColor), 0 0 20px var(--tw-shadow-color, currentColor)',
       },
+      colors: {
+        'primary-bg': '#353839',
+        'primary-text': '#C0C0C0',
+      },
     },
   },
   plugins: [

@@ -3,7 +3,6 @@ import React, { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
 const Dashboard = () => {
-  // const token = localStorage?.getItem('token')
   const router = useRouter()
 
   useEffect(() => {
@@ -14,11 +13,11 @@ const Dashboard = () => {
         router.push('/auth/login')
       }
     }
-  }, []);
+  }, [router]);
 
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className='w-full h-full flex items-center justify-center'>
+      <h1 className='text-2xl font-bold text-gray-300'>Dashboard</h1>
     </div>
   )
 }

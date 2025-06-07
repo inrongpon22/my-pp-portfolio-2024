@@ -54,8 +54,6 @@ const Login = () => {
       router.push('/admin/dashboard')
     }
   }, [router])
-  
-  console.log(errors)
 
   return (
     <section className='max-w-md relative text-center border rounded-lg p-10 shadow-lg hover:shadow-xl transition-all duration-300 mx-auto'>
@@ -72,10 +70,7 @@ const Login = () => {
           Please enter your email and password to sign in
         </p>
       </div>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className='flex flex-col gap-4'
-      >
+      <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
         <div className='fv-row mb-3'>
           <input
             disabled={isSubmitting || isLoading}
@@ -109,7 +104,7 @@ const Login = () => {
           type='submit'
           className={clsx(
             'w-full bg-blue-500 hover:bg-blue-600 text-white p-2 rounded-md',
-            isSubmitting || isLoading && 'opacity-50 cursor-not-allowed'
+            isSubmitting || (isLoading && 'opacity-50 cursor-not-allowed')
           )}
         >
           {!isSubmitting && !isLoading ? 'Sign In' : 'Please wait...'}
