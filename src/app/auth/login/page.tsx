@@ -8,7 +8,7 @@ import { toast } from 'react-hot-toast'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { ArrowLeft, LogIn } from 'lucide-react'
+import { ArrowLeft, LogIn, Eye, EyeClosed, LoaderCircle } from 'lucide-react'
 
 interface LoginForm {
   email: string
@@ -22,6 +22,7 @@ const LoginSchema = z.object({
 
 const Login = () => {
   const router = useRouter()
+  const [showPassword, setShowPassword] = useState<boolean>(false)
 
   const {
     register,
@@ -56,7 +57,7 @@ const Login = () => {
   }, [router])
 
   return (
-    <section className='max-w-md relative text-center border rounded-lg p-10 shadow-lg hover:shadow-xl transition-all duration-300 mx-auto'>
+    <section className='max-w-xs md:max-w-md relative text-center border rounded-lg p-10 shadow-lg hover:shadow-xl transition-all duration-300 mx-auto'>
       <Link
         href='/'
         className='absolute top-10 left-10 text-black bg-slate-100 rounded-full hover:bg-slate-200 transition-all duration-300'
@@ -85,9 +86,9 @@ const Login = () => {
             <p className='text-red-500 text-start'>{errors.email.message}</p>
           )}
         </div>
-        <div className='fv-row mb-3'>
+        <div className='relative mb-3'>
           <input
-            type='password'
+            type={showPassword ? 'text' : 'password'}
             placeholder='Password'
             disabled={isSubmitting || isLoading}
             {...register('password')}
@@ -96,6 +97,11 @@ const Login = () => {
               errors.password && 'border-red-500'
             )}
           />
+          {showPassword ? (
+            <Eye className='absolute right-2 top-1/2 -translate-y-1/2 text-gray-500' onClick={() => setShowPassword(!showPassword)} />
+          ) : (
+            <EyeClosed className='absolute right-2 top-1/2 -translate-y-1/2 text-gray-500' onClick={() => setShowPassword(!showPassword)} />
+          )}
           {errors.password && (
             <p className='text-red-500 text-start'>{errors.password.message}</p>
           )}
@@ -107,7 +113,11 @@ const Login = () => {
             isSubmitting || (isLoading && 'opacity-50 cursor-not-allowed')
           )}
         >
-          {!isSubmitting && !isLoading ? 'Sign In' : 'Please wait...'}
+          {!isSubmitting && !isLoading ? (
+            'Sign In'
+          ) : (
+            <LoaderCircle className='h-4 w-4 animate-spin' />
+          )}
         </button>
       </form>
     </section>
