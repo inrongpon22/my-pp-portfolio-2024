@@ -25,7 +25,8 @@ export default function AdminLayout({
   return (
     <AuthProvider>
       <div className='h-screen flex'>
-        <div className='w-1/4 bg-primary-bg p-4 text-primary-text flex flex-col gap-4'>
+        {/* starts:: sidebar in desktop view */}
+        <div className='hidden md:flex relative w-1/4 bg-primary-bg p-4 text-primary-text flex-col gap-4'>
           <Link
             href='/admin/dashboard'
             className='text-2xl font-bold text-center hover:text-white transition-all duration-300'
@@ -36,8 +37,11 @@ export default function AdminLayout({
             <Sidebar />
           </div>
         </div>
-        <div className='flex flex-col w-3/4'>
-          {/* <Navbar /> */}
+        {/* ends:: sidebar in desktop view */}
+        <div className='flex flex-col w-full md:w-3/4'>
+          {/* starts:: header in mobile view */}
+          <Navbar />
+          {/* ends: header in mobile view */}
           {children}
         </div>
       </div>

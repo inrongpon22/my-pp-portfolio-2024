@@ -10,8 +10,13 @@ interface Menu {
   href: string
 }
 
-const Sidebar = () => {
+const Sidebar = ({
+  mobileClicked,
+}: {
+  mobileClicked?: [boolean, (isOpen: boolean) => void]
+}) => {
   const pathname = usePathname()
+  const [_, setIsMenuOpen] = mobileClicked || [false, () => {}]
   const menus: Menu[] = [
     {
       label: 'Dashboard',
@@ -35,10 +40,18 @@ const Sidebar = () => {
         <Link
           href={menu.href}
           key={menu.label}
-          className={clsx('hover:text-white rounded-md font-bold p-2 truncate', {
-            'text-[#FF7F50] bg-gray-100 border-l-4 border-l-[#FF7F50]':
-              menu.href === pathname,
-          })}
+          className={clsx(
+            'hover:text-white rounded-md font-bold p-2 truncate',
+            {
+              'text-[#FF7F50] bg-gray-100 border-l-4 border-l-[#FF7F50]':
+                menu.href === pathname,
+            }
+          )}
+          onClick={() => {
+            if (mobileClicked) {
+              setIsMenuOpen(false)
+            }
+          }}
         >
           <p>{menu.label}</p>
         </Link>
