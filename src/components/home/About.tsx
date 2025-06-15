@@ -1,17 +1,17 @@
-import { BuildOutlined, DesktopOutlined } from '@ant-design/icons'
 import { Card } from 'antd'
+import { MonitorDot, PencilRuler } from 'lucide-react'
 import React from 'react'
 
 const services = [
   {
     title: 'UX/UI',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ratione!',
-    icon: <BuildOutlined />,
+    icon: <PencilRuler />,
   },
   {
     title: 'Web Design',
     desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, ratione!',
-    icon: <DesktopOutlined />,
+    icon: <MonitorDot />,
   },
 ]
 

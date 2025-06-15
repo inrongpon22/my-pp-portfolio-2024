@@ -5,10 +5,10 @@ import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { adminServices } from '@/services/AdminServices'
 import { toast } from 'react-hot-toast'
-import { ArrowLeftOutlined, LoginOutlined } from '@ant-design/icons'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { ArrowLeft, LogIn } from 'lucide-react'
 
 interface LoginForm {
   email: string
@@ -61,10 +61,10 @@ const Login = () => {
         href='/'
         className='absolute top-10 left-10 text-black bg-slate-100 rounded-full hover:bg-slate-200 transition-all duration-300'
       >
-        <ArrowLeftOutlined className='text-xl p-2' />
+        <ArrowLeft className='h-6 w-6 text-xl p-1' />
       </Link>
       <div className='flex flex-col items-center justify-center gap-2 mb-10'>
-        <LoginOutlined className='text-2xl border rounded-xl p-4' />
+        <LogIn className='h-10 w-10 text-2xl border rounded-xl p-2' />
         <h1 className='text-2xl font-bold'>Sign In with email</h1>
         <p className='text-sm text-gray-500'>
           Please enter your email and password to sign in

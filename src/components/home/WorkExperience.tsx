@@ -1,5 +1,5 @@
-import { ClockCircleOutlined, LoadingOutlined } from "@ant-design/icons";
 import { Timeline } from "antd";
+import { LoaderCircle } from "lucide-react";
 import React from "react";
 
 const WorkExperience = () => {
@@ -59,7 +59,7 @@ const WorkExperience = () => {
               color: "#fb923c",
             },
             {
-              dot: <LoadingOutlined spin  style={{ fontSize: "16px" }} />,
+              dot: <LoaderCircle  style={{ fontSize: "16px" }} className="animate-spin" />,
               label: (
                 <div className="ps-3">
                   <p>April 2024 - Present</p>

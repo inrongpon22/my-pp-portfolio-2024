@@ -1,32 +1,27 @@
 import React from "react";
-import {
-  FacebookOutlined,
-  InstagramOutlined,
-  LinkedinOutlined,
-  TwitterOutlined,
-} from "@ant-design/icons";
 import { Anchor, Divider, Tooltip } from "antd";
 import Link from "next/link";
+import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 const contactIcons = [
   {
     title: "Facebook",
-    icon: <FacebookOutlined />,
+    icon: <Facebook />,
     url: "https://www.facebook.com/",
   },
   {
     title: "Instagram",
-    icon: <InstagramOutlined />,
+    icon: <Instagram />,
     url: "https://www.instagram.com/",
   },
   {
     title: "Twitter",
-    icon: <TwitterOutlined />,
+    icon: <Twitter />,
     url: "https://twitter.com/",
   },
   {
     title: "Linkedin",
-    icon: <LinkedinOutlined />,
+    icon: <Linkedin />,
     url: "https://linkedin.com",
   },
 ];
