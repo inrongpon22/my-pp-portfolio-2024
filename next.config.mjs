@@ -16,6 +16,7 @@ const nextConfig = {
 
     return config
   },
+  transpilePackages: ['antd', '@ant-design/icons'], // Even if you removed icons, if antd *still* tries to import it, this *might* help with internal resolution.
 }
 
 export default nextConfig
