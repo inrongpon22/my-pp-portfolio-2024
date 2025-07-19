@@ -1,4 +1,3 @@
-import { Card } from 'antd'
 import { MonitorDot, PencilRuler } from 'lucide-react'
 import React from 'react'
 
@@ -28,11 +27,11 @@ const About = () => {
         <div className='flex flex-col md:flex-row justify-center gap-4 mt-4'>
           {services?.map((item: any, index: number) => {
             return (
-              <Card key={index}>
+              <div key={index} className='bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'>
                 <span className='text-6xl'>{item.icon}</span>
                 <p className='font-bold'>{item.title}</p>
                 {item.desc}
-              </Card>
+              </div>
             )
           })}
         </div>

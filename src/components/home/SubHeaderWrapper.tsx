@@ -1,17 +1,20 @@
 'use client'
 import React from 'react'
-import { Image } from 'antd'
+import Image from 'next/image'
 
 const SubHeaderWrapper = () => {
   return (
     <div id='home' className='flex flex-col items-center md:flex-row gap-10 mx-auto pt-28'>
-      <Image
+      {/* <Image
         alt='profile'
-        src='https://placehold.co/52x52'
+        src='https://www.placehold.co/52x52'
         className='w-48 rounded-full object-cover'
         width={100}
         height={100}
-      />
+        onError={(e) => {
+          e.currentTarget.src = 'https://www.placehold.co/52x52'
+        }}
+      /> */}
       <div className='lg:pb-0'>
         <h1 className='text-center text-4xl'>
           I&apos;m <span className='text-orange-400'>Phanupong</span>, Front-End

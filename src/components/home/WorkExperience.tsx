@@ -1,85 +1,83 @@
-import { Timeline } from "antd";
 import { LoaderCircle } from "lucide-react";
 import React from "react";
 
 const WorkExperience = () => {
+  const timelineItems = [
+    {
+      label: "March 2022",
+      children: "Graduated in Faculty of Education, English",
+      color: "#fb923c",
+    },
+    {
+      label: "March 2022 - December 2022",
+      children: "Practicing by myself",
+      color: "#fb923c",
+    },
+    {
+      label: "January 2023 - March 2024",
+      children: (
+        <div>
+          <p className="font-bold">Front-End Developer (React)</p>
+          <p>
+            <span className="font-semibold">Tools: </span>
+            <span>React, Tailwind</span>
+          </p>
+          <p className="text-xs">
+            ITTHIRIT TECHNOLOGY CO., LTD. at Chiang Mai, Thailand
+          </p>
+        </div>
+      ),
+      color: "#fb923c",
+    },
+    {
+      label: "April 2024 - Present",
+      children: (
+        <div>
+          <p className="font-bold">Front-End Developer</p>
+          <p>
+            <span className="font-semibold">Tools: </span>
+            <span>React, Tailwind, Nodejs, Express, SQL, PostgresQL, Docker</span>
+          </p>
+          <p className="text-xs">
+            MEET SOFTWARE CO., at Chiang Mai, Thailand
+          </p>
+        </div>
+      ),
+      loading: true,
+    },
+  ];
+
   return (
     <section className="h-full w-full flex flex-col justify-center items-center gap-10">
       <p className="text-center md:text-left text-6xl font-bold">
         <span>My Work</span>
         <span className="text-orange-400"> Experience</span>
       </p>
-      <div className="text-xs md:w-full">
-        <Timeline
-          mode="alternate"
-          items={[
-            {
-              label: (
-                <div className=" pe-3">
-                  <i>March 2022</i>
+      <div className="w-full max-w-4xl">
+        <div className="relative">
+          {/* Timeline line */}
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-300"></div>
+          
+          {timelineItems.map((item, index) => (
+            <div key={index} className={`relative mb-8 ${index % 2 === 0 ? 'left-timeline' : 'right-timeline'}`}>
+              <div className={`flex items-center ${index % 2 === 0 ? 'justify-end' : 'justify-start'}`}>
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
+                  <div className="bg-white p-4 rounded-lg shadow-md">
+                    <div className="text-sm text-gray-600 mb-2">{item.label}</div>
+                    <div className="text-sm">{item.children}</div>
+                  </div>
                 </div>
-              ),
-              children: (
-                <div className="">
-                  <p className="">Graduated in Faculty of Education, English</p>
-                </div>
-              ),
-              dot: (
-                <div className="border-2 border-dashed border-orange-400 rounded-full p-0.5">
-                  <div className="w-[25px] h-[25px] bg-orange-400 rounded-full"></div>
-                </div>
-              ),
-            },
-            {
-              label: (
-                <div className="">
-                  <span>March 2022 - December 2022</span>
-                </div>
-              ),
-              children: (
-                <div className="mb-5">
-                  <p className="font-bold">Practicing by myself</p>
-                </div>
-              ),
-            },
-            {
-              label: "January 2023 - March 2024",
-              children: (
-                <div className="mb-5">
-                  <p className="font-bold">Front-End Developer (React)</p>
-                  <p>
-                    <span className="font-semibold">Tools:{" "}</span>
-                    <span>React, Tailwind</span>
-                  </p>
-                  <p className="text-xs">
-                    ITTHIRIT TECHNOLOGY CO., LTD. at Chiang Mai, Thailand
-                  </p>
-                </div>
-              ),
-              color: "#fb923c",
-            },
-            {
-              dot: <LoaderCircle  style={{ fontSize: "16px" }} className="animate-spin" />,
-              label: (
-                <div className="ps-3">
-                  <p>April 2024 - Present</p>
-                </div>
-              ),
-              children: (
-                <div className="">
-                  <p className="font-bold">Front-End Developer</p>
-                  <p>
-                    <span className="font-semibold">Tools:{" "}</span>
-                    <span>React, Tailwind, Nodejs, Express, SQL, PostgresQL, Docker</span>
-                  </p>
-                  <p className="text-xs">
-                    MEET SOFTWARE CO., at Chiang Mai, Thailand
-                  </p>
-                </div>
-              ),
-            },
-          ]}
-        />
+              </div>
+              
+              {/* Timeline dot */}
+              <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-orange-400 rounded-full border-2 border-white shadow-md">
+                {item.loading && (
+                  <LoaderCircle className="animate-spin text-white text-xs" />
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

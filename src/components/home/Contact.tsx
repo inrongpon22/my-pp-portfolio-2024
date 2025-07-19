@@ -1,5 +1,4 @@
 import React from "react";
-import { Anchor, Divider, Tooltip } from "antd";
 import Link from "next/link";
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
@@ -31,7 +30,7 @@ const Contact = () => {
     <section id="contact" className="px-10 pt-10">
       <span className="text-6xl font-bold">Get in touch</span>
 
-      <Divider className="bg-white" />
+      <hr className="border-white my-4" />
       <div className=" leading-loose">
         <div className="">
           <p>Lorem ipsum dolor sit amet.</p>
@@ -72,7 +71,7 @@ const Contact = () => {
           </ul>
         </div>
       </div>
-      <Divider className="bg-white" />
+      <hr className="border-white my-4" />
     </section>
   );
 };

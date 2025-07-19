@@ -12,7 +12,6 @@
     "@hookform/resolvers": "^5.0.1",
     "@supabase/ssr": "^0.6.1",
     "@supabase/supabase-js": "^2.49.9",
-    "antd": "^5.15.2",
     "axios": "^1.6.8",
     "bcrypt": "^6.0.0",
     "clsx": "^2.1.0",
