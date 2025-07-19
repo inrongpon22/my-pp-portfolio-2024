@@ -9,7 +9,6 @@ import FooterWrapper from '@/components/layout/footer/FooterWrapper'
 import SubHeaderWrapper from '@/components/home/SubHeaderWrapper'
 import ProjectsWrapper from '@/components/home/ProjectsWrapper'
 import WorkExperience from '@/components/home/WorkExperience'
-import ScrollVelocity from '@/components/framer-motion/ScrollVelocity'
 import Tools from '@/components/home/Tools'
 
 export default function Home() {
