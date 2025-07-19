@@ -1,6 +1,5 @@
 'use client'
 import React from 'react'
-import './subheader.css'
 import { Image } from 'antd'
 
 const SubHeaderWrapper = () => {
