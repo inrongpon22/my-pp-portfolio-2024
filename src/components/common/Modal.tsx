@@ -1,22 +1,30 @@
-import React from 'react'
-import clsx from 'clsx'
+import React from "react"
+import clsx from "clsx"
 
 const Modal = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
->(({ children, ...props }, ref) => {
+  HTMLDialogElement,
+  React.HTMLAttributes<HTMLDialogElement> & {
+    id: string
+  }
+>(({ children, id, ...props }, ref) => {
   const { className, ...rest } = props
   return (
-    <div
+    <dialog
+      id={id}
       ref={ref}
+      className={clsx("modal modal-bottom sm:modal-middle", className)}
       {...rest}
-      className={clsx('fixed top-0 w-full h-full bg-black/50 z-50', className)}
     >
-      {children}
-    </div>
+      <div className="modal-box">
+        {children}
+      </div>
+      <form method="dialog" className="modal-backdrop">
+        <button>close</button>
+      </form>
+    </dialog>
   )
 })
 
-Modal.displayName = 'Modal'
+Modal.displayName = "Modal"
 
 export { Modal }
