@@ -15,6 +15,7 @@
     "axios": "^1.6.8",
     "bcrypt": "^6.0.0",
     "clsx": "^2.1.0",
+    "daisyui": "^5.0.47",
     "file-loader": "^6.2.0",
     "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.515.0",

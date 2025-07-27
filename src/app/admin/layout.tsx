@@ -47,7 +47,9 @@ export default function AdminLayout({
           {/* starts:: header in mobile view */}
           <Navbar />
           {/* ends: header in mobile view */}
-          {children}
+          <div className='p-4'>
+            {children}
+          </div>
         </div>
       </div>
     </AuthProvider>

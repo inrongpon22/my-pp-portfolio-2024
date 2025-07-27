@@ -25,6 +25,7 @@ const config: Config = {
     },
   },
   plugins: [
+    require("daisyui"),
     function({ addUtilities, theme, e }: any) {
       const textShadows = theme('textShadow')
       const utilities = Object.entries(textShadows).map(([key, value]: any) => {
