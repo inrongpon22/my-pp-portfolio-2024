@@ -69,7 +69,7 @@ const ProjectForm = ({
     if (project) {
       reset(project)
     }
-  }, [project])
+  }, [project, reset])
 
   return (
     <div className="text-white">

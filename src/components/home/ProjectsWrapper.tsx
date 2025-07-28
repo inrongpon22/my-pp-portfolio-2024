@@ -1,9 +1,8 @@
 import React from 'react'
 import getProjectsData from './getProjects'
 import Image from 'next/image'
-import { Project } from '@/types/project'
 
-const ProjectCard = ({ item }: { item: Project }): React.ReactNode => {
+const ProjectCard = ({ item }: { item: any }): React.ReactNode => {
   return (
     <div className='border-2 rounded-lg shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-lg'>
       <Image
@@ -31,7 +30,7 @@ const ProjectsWrapper = () => {
         </span>
       </h1>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-0'>
-        {getProjectsData?.map((item: Project, index: number) => {
+        {getProjectsData?.map((item: any, index: number) => {
           // if (index < 5)
           return <ProjectCard key={index} item={item} />
         })}
