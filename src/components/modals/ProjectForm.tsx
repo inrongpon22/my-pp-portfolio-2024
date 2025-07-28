@@ -1,7 +1,8 @@
+import { useEffect } from "react"
 import { projectServices } from "@/services/ProjectServices"
+import { Project } from "@/types/project"
 import { zodResolver } from "@hookform/resolvers/zod"
 import clsx from "clsx"
-import React from "react"
 import { useForm } from "react-hook-form"
 import toast from "react-hot-toast"
 import { z } from "zod"
@@ -13,12 +14,21 @@ const projectSchema = z.object({
   }),
 })
 
-const ProjectForm = () => {
+const ProjectForm = ({
+  project,
+  onRequestSuccess,
+  onClose,
+}: {
+  project: Project | null
+  onRequestSuccess: () => void
+  onClose: () => void
+}) => {
+
   const {
     register,
     handleSubmit,
     reset,
-    formState: { errors },
+    formState: { errors, isSubmitting },
   } = useForm({
     defaultValues: {
       title: "",
@@ -28,21 +38,38 @@ const ProjectForm = () => {
   })
 
   const onSubmit = async (data: any) => {
-    console.log(data)
     try {
-      const response = await projectServices.createProject(data)
-      console.log(response)
-      toast.success("Project created successfully")
+      if (project) {
+        console.log("update case")
+        const response = await projectServices.updateProject(project.id, data)
+        toast.success("Project updated successfully")
+      } else {
+        console.log("create case")
+        const response = await projectServices.createProject(data)
+        toast.success("Project created successfully")
+      }
+      onRequestSuccess()
     } catch (error) {
       console.log("create new project error:", error)
       toast.error("Failed to create new project")
     } finally {
       reset()
-      ;(
-        document.getElementById("project_form") as HTMLDialogElement
-      )?.close()
+      onClose()
     }
   }
+
+  const handleReset = () => {
+    reset({
+      title: "",
+      description: "",
+    })
+  }
+
+  useEffect(() => {
+    if (project) {
+      reset(project)
+    }
+  }, [project])
 
   return (
     <div className="text-white">
@@ -81,17 +108,21 @@ const ProjectForm = () => {
         </div>
         <div className="flex justify-end gap-2">
           <button
+            type="button"
             className="btn btn-soft btn-outline"
             onClick={() => {
-              ;(
-                document.getElementById("project_form") as HTMLDialogElement
-              )?.close()
+              handleReset()
+              onClose()
             }}
           >
             Cancel
           </button>
-          <button className="btn btn-primary" type="submit">
-            Create
+          <button
+            className="btn btn-primary"
+            type="submit"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? "Submitting..." : project ? "Update" : "Create"}
           </button>
         </div>
       </form>

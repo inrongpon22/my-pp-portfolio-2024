@@ -1,7 +1,7 @@
 export type Project = {
+  id: string;
   title: string;
-  type: string;
-  previewImg: string;
-  view: string;
-  source: string;
-};
+  description: string;
+  created_at: string
+  updated_at: string
+}

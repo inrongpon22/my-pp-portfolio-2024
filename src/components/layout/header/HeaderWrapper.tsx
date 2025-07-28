@@ -42,11 +42,6 @@ const HeaderWrapper = () => {
           ))}
         </nav>
       </div>
-      {/* <Link href='/auth/login'>
-        <Button type='primary' shape='round' className='bg-blue-500'>
-          Login
-        </Button>
-      </Link> */}
     </div>
   )
 }

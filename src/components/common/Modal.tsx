@@ -18,9 +18,9 @@ const Modal = React.forwardRef<
       <div className="modal-box">
         {children}
       </div>
-      <form method="dialog" className="modal-backdrop">
+      {/* <form method="dialog" className="modal-backdrop">
         <button>close</button>
-      </form>
+      </form> */}
     </dialog>
   )
 })
