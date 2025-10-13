@@ -7,7 +7,16 @@
 // import pro7 from '../assets/project7.png';
 // import pro8 from '../assets/project8.png';
 
-const getProjectsData = [
+export interface ProjectProps {
+  title: string
+  type: string
+  image: string[]
+  previewImg: string
+  view: string
+  source: string
+}
+
+const getProjectsData: ProjectProps[] = [
   {
     title: "Piika",
     type: "Web design",
