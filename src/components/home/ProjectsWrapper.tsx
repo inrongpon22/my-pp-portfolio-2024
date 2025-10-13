@@ -4,7 +4,7 @@ import Image from "next/image"
 
 const ProjectCard = ({ item }: { item: ProjectProps }): React.ReactNode => {
   return (
-    <div className="border-2 rounded-lg shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-lg">
+    <div className="border-2 dark:border-slate-700 rounded-lg shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-orange-400">
       <Image
         alt={item.title}
         src={item.previewImg}
@@ -14,7 +14,7 @@ const ProjectCard = ({ item }: { item: ProjectProps }): React.ReactNode => {
       />
       <div className="flex flex-col p-2">
         <span className="text-xl font-extrabold">{item.title}</span>
-        <span className="text-sm text-gray-500">{item.type}</span>
+        <span className="text-sm dark:text-gray-500">{item.type}</span>
       </div>
     </div>
   )

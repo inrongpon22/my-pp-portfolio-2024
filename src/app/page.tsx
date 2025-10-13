@@ -1,6 +1,6 @@
 "use client"
+
 import React, { Suspense } from "react"
-import Image from "next/image"
 // components
 import HeaderWrapper from "@/components/layout/header/HeaderWrapper"
 import About from "@/components/home/About"
@@ -37,7 +37,7 @@ export default function Home() {
 
           <FooterWrapper />
         </div>
-        <h1 className="html-tag">{`</html>`}</h1>
+        <h1 className="html-tag text-orange-500">{`</html>`}</h1>
       </div>
     </Suspense>
   )

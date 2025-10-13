@@ -33,11 +33,11 @@ body {
   height: 30px !important;
 }
 
-[data-theme="dark"] .splash-screen {
+.dark .splash-screen {
   background-color: #151521;
   color: #92929F;
 }
 
-[data-theme="dark"] .splash-screen span {
+.dark .splash-screen span {
   color: #92929F;
 }
