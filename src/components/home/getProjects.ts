@@ -7,10 +7,23 @@
 // import pro7 from '../assets/project7.png';
 // import pro8 from '../assets/project8.png';
 
+export enum Responsibilities {
+  FRONTEND = "Frontend",
+  BACKEND = "Backend",
+  FULLSTACK = "Fullstack",
+  DESIGN = "Design",
+  UI_UX = "UI/UX",
+  SEO = "SEO",
+  CONTENT = "Content",
+  MARKETING = "Marketing",
+  OTHER = "Other",
+}
+
 export interface ProjectProps {
   title: string
   type: string
   image: string[]
+  responsibilities: Responsibilities[]
   previewImg: string
   view: string
   source: string
@@ -20,6 +33,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "Piika",
     type: "Web design",
+    responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
     previewImg: "/media/product-demos/piika/piika.png",
     view: "",
@@ -28,6 +42,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "Flowers",
     type: "Web design",
+    responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
     previewImg: "/media/product-demos/flowers/flowers.png",
     view: "",
@@ -36,6 +51,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "Meet More",
     type: "Web design",
+    responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
     previewImg: "/media/product-demos/meet-more/meetmore.png",
     view: "",
@@ -44,6 +60,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "John (Booking App)",
     type: "Web design",
+    responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
     previewImg: "/media/product-demos/john/booking.png",
     view: "",
@@ -52,6 +69,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "ItrendX",
     type: "Web design",
+    responsibilities: [Responsibilities.FRONTEND],
     image: [],
     previewImg: "/media/product-demos/Itrend/itrend_1.png",
     view: "",
@@ -60,6 +78,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "FPPMS",
     type: "Web design",
+    responsibilities: [Responsibilities.FRONTEND],
     image: [],
     previewImg: "/media/product-demos/FPPMS/fppms_1.png",
     view: "",
@@ -68,6 +87,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "Portfolio 2022",
     type: "Web design",
+    responsibilities: [Responsibilities.FRONTEND],
     image: [],
     previewImg: "/media/product-demos/2022portfolio/port2022_1.png",
     view: "",
@@ -76,6 +96,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "E-commerce",
     type: "Web design",
+    responsibilities: [Responsibilities.FRONTEND],
     image: [],
     previewImg: "/media/product-demos/ecommerce-shirt/ecommerce_shirt_2.png",
     view: "",
@@ -137,6 +158,6 @@ const getProjectsData: ProjectProps[] = [
   //     view: "https://cheerful-kleicha-1099a5.netlify.app/",
   //     source: "https://github.com/inrongpon22/frontendMentor-testimonials-grid-section"
   // },
-];
+]
 
-export default getProjectsData;
+export default getProjectsData

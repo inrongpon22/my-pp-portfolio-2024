@@ -56,7 +56,7 @@ const WorkExperience = () => {
           className="h-full w-full flex flex-col justify-center items-center gap-10 rounded-2xl py-10"
         >
           <p className="text-center md:text-left text-6xl font-bold">
-            <span>My Work</span>
+            <span className="text-gray-100 dark:text-gray-300">My Work</span>
             <span className="text-orange-400"> Experience</span>
           </p>
           <div className="w-full max-w-4xl">
@@ -66,7 +66,7 @@ const WorkExperience = () => {
               {timelineItems.map((item, index) => (
                 <div
                   key={index}
-                  className={`relative mb-8 ${
+                  className={`relative  mb-8 ${
                     index % 2 === 0 ? "left-timeline" : "right-timeline"
                   }`}
                 >
@@ -80,8 +80,8 @@ const WorkExperience = () => {
                         index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
                       }`}
                     >
-                      <div className="bg-white p-4 rounded-lg shadow-md">
-                        <div className="text-sm text-gray-600 mb-2">
+                      <div className="bg-white p-4 rounded-lg shadow-md dark:bg-slate-800 dark:border dark:border-slate-700">
+                        <div className="text-sm text-gray-600 dark:text-gray-200 mb-2">
                           {item.label}
                         </div>
                         <div className="text-sm">{item.children}</div>
