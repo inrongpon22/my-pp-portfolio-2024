@@ -9,6 +9,7 @@ import SubHeaderWrapper from "@/components/home/SubHeaderWrapper"
 import ProjectsWrapper from "@/components/home/ProjectsWrapper"
 import WorkExperience from "@/components/home/WorkExperience"
 import Tools from "@/components/home/Tools"
+import FloatingActionButtons from "@/components/common/FloatingActionButtons"
 
 const LoadingSpinner = () => (
   <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-75 z-50">
@@ -38,6 +39,7 @@ export default function Home() {
           <FooterWrapper />
         </div>
         <h1 className="html-tag text-orange-500">{`</html>`}</h1>
+        <FloatingActionButtons />
       </div>
     </Suspense>
   )
