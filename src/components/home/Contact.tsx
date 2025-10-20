@@ -29,12 +29,12 @@ const contactIcons = [
 
 const Contact = () => {
   return (
-    <section id="contact" className="px-10 pt-10">
-      <span className="text-6xl font-bold">Get in touch</span>
+    <section id="contact" className="px-4 sm:px-10 pt-10">
+      <span className="text-3xl sm:text-6xl font-bold">Get in touch</span>
 
       <hr className="border-white my-4" />
       <div className=" leading-loose">
-        <div className="">
+        <div className="text-sm sm:text-base">
           <p>Lorem ipsum dolor sit amet.</p>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut harum
@@ -45,13 +45,13 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="pt-10">
+        <div className="pt-10 text-sm sm:text-base">
           <p className="text-2xl font-bold text-orange-400 underline">
             Contact
           </p>
           <ul>
             <li className="flex items-center gap-2">
-              <span className="text-orange-400 font-bold">Email:</span>
+              <span className="text-orange-400 font-bold text-sm sm:text-base">Email:</span>
               <Link
                 href="mailto:inrongpon.phanupong2@gmail.com"
                 target="_blank"
@@ -61,7 +61,7 @@ const Contact = () => {
               </Link>
             </li>
             <li className="flex items-center gap-2">
-              <span className="text-orange-400 font-bold">Github:</span>
+              <span className="text-orange-400 font-bold text-sm sm:text-base">Github:</span>
               <Link
                 href="https://github.com/inrongpon22"
                 target="_blank"
@@ -74,7 +74,7 @@ const Contact = () => {
         </div>
       </div>
       {/* <ThemeSwitcher /> */}
-      <hr className="border-white my-4" />
+      <hr className="border-white my-4 sm:my-8" />
     </section>
   )
 }

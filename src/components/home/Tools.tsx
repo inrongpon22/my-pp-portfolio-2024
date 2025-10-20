@@ -62,8 +62,8 @@ const Tools = () => {
 
   return (
     <div id="tools" className="flex flex-col items-start">
-      <h1 className="html-tag ml-4">{`<tools>`}</h1>
-      <div className="grid grid-cols-3 md:grid-cols-5 gap-2 px-12">
+      <h1 className="html-tag sm:ml-4">{`<tools>`}</h1>
+      <div className="grid grid-cols-3 md:grid-cols-5 gap-2 sm:x-12">
         {tools.map((item: ToolProps, index: number) => {
           return (
             <div
@@ -71,12 +71,12 @@ const Tools = () => {
               className="bg-slate-200 dark:bg-slate-800 flex flex-col items-center justify-center text-center p-5 rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-orange-400"
             >
               <Image alt={item.title} src={item.icon} width={45} height={45} />
-              <span className="text-lg">{item.title}</span>
+              <span className="text-xs sm:text-lg">{item.title}</span>
             </div>
           )
         })}
       </div>
-      <h1 className="html-tag ml-4">{`</tools>`}</h1>
+      <h1 className="html-tag sm:ml-4">{`</tools>`}</h1>
     </div>
   )
 }

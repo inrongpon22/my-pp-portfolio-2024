@@ -6,8 +6,8 @@ import Contact from "@/components/home/Contact"
 const FooterWrapper = () => {
   return (
     <div id="footer">
-      <h1 className="html-tag ml-4">{`<footer>`}</h1>
-      <section className="flex justify-center px-12">
+      <h1 className="html-tag sm:ml-4">{`<footer>`}</h1>
+      <section className="flex justify-center sm:px-12">
         <div className="bg-[#333] text-white rounded-3xl">
           <Contact />
           <div className="flex justify-between px-10 pb-10">
@@ -15,7 +15,7 @@ const FooterWrapper = () => {
           </div>
         </div>
       </section>
-      <h1 className="html-tag ml-4">{`</footer>`}</h1>
+      <h1 className="html-tag sm:ml-4">{`</footer>`}</h1>
     </div>
   )
 }

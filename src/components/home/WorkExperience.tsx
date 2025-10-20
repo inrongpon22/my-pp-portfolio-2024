@@ -49,20 +49,19 @@ const WorkExperience = () => {
 
   return (
     <div id="work-experience">
-      <h1 className="html-tag ml-4">{`<work-experience>`}</h1>
-      <div className="px-12">
+      <h1 className="html-tag sm:ml-4">{`<work-experience>`}</h1>
+      <div className="sm:px-12">
         <section
           id="services-background"
           className="h-full w-full flex flex-col justify-center items-center gap-10 rounded-2xl py-10"
         >
-          <p className="text-center md:text-left text-6xl font-bold">
-            <span className="text-gray-100 dark:text-gray-300">My Work</span>
-            <span className="text-orange-400"> Experience</span>
+          <p className="text-center md:text-left text-3xl sm:text-6xl font-bold">
+            <span className="text-gray-100 dark:text-gray-300 text-3xl sm:text-6xl">My Work</span>
+            <span className="text-orange-400 text-3xl sm:text-6xl"> Experience</span>
           </p>
           <div className="w-full max-w-4xl">
             <div className="relative">
               <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-300"></div>
-
               {timelineItems.map((item, index) => (
                 <div
                   key={index}
@@ -100,7 +99,7 @@ const WorkExperience = () => {
           </div>
         </section>
       </div>
-      <h1 className="html-tag ml-4">{`</work-experience>`}</h1>
+      <h1 className="html-tag sm:ml-4">{`</work-experience>`}</h1>
     </div>
   )
 }
