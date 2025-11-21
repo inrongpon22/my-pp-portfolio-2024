@@ -63,7 +63,7 @@ const Tools = () => {
   return (
     <div id="tools" className="flex flex-col items-start">
       <h1 className="html-tag sm:ml-4">{`<tools>`}</h1>
-      <div className="grid grid-cols-3 md:grid-cols-5 gap-2 sm:x-12">
+      <div className="grid grid-cols-3 md:grid-cols-8 gap-2 sm:x-12">
         {tools.map((item: ToolProps, index: number) => {
           return (
             <div

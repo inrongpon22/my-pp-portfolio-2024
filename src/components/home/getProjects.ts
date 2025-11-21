@@ -21,6 +21,7 @@ export enum Responsibilities {
 
 export interface ProjectProps {
   title: string
+  description: string
   type: string
   image: string[]
   responsibilities: Responsibilities[]
@@ -32,6 +33,7 @@ export interface ProjectProps {
 const getProjectsData: ProjectProps[] = [
   {
     title: "Piika",
+    description: "Description",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
@@ -41,6 +43,7 @@ const getProjectsData: ProjectProps[] = [
   },
   {
     title: "Flowers",
+    description: "Description",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
@@ -50,6 +53,7 @@ const getProjectsData: ProjectProps[] = [
   },
   {
     title: "Meet More",
+    description: "Description",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
@@ -59,6 +63,7 @@ const getProjectsData: ProjectProps[] = [
   },
   {
     title: "John (Booking App)",
+    description: "Description",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
@@ -68,6 +73,7 @@ const getProjectsData: ProjectProps[] = [
   },
   {
     title: "ItrendX",
+    description: "Description",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
@@ -77,6 +83,7 @@ const getProjectsData: ProjectProps[] = [
   },
   {
     title: "FPPMS",
+    description: "Description",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
@@ -86,6 +93,7 @@ const getProjectsData: ProjectProps[] = [
   },
   {
     title: "Portfolio 2022",
+    description: "Description",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
@@ -95,6 +103,7 @@ const getProjectsData: ProjectProps[] = [
   },
   {
     title: "E-commerce",
+    description: "Description",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
