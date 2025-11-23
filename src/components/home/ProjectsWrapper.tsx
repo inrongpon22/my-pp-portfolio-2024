@@ -3,6 +3,7 @@
 import React from "react"
 import getProjectsData, { ProjectProps, Responsibilities } from "./getProjects"
 import Image from "next/image"
+import { cn } from "@/app/utils/cn"
 
 const ProjectCard = ({ item }: { item: ProjectProps }): React.ReactNode => {
   return (
@@ -35,7 +36,7 @@ const ProjectCard = ({ item }: { item: ProjectProps }): React.ReactNode => {
         </div>
         <button
           type="button"
-          className="bg-slate-800 dark:bg-slate-300 text-white dark:text-black p-2 px-4 rounded-xl"
+          className={cn("bg-slate-800 dark:bg-slate-300 text-white dark:text-black p-2 px-4 rounded-xl", item.source.length === 0 && "hidden")}
         >
           View Project Details
         </button>

@@ -27,89 +27,100 @@ export interface ProjectProps {
   responsibilities: Responsibilities[]
   previewImg: string
   view: string
-  source: string
+  source: string[]
 }
 
 const getProjectsData: ProjectProps[] = [
   {
-    title: "Piika",
-    description: "Description",
-    type: "Web design",
-    responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
-    image: [],
-    previewImg: "/media/product-demos/piika/piika.png",
-    view: "",
-    source: "",
-  },
-  {
-    title: "Flowers",
-    description: "Description",
-    type: "Web design",
-    responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
-    image: [],
-    previewImg: "/media/product-demos/flowers/flowers.png",
-    view: "",
-    source: "",
-  },
-  {
     title: "Meet More",
-    description: "Description",
+    description:
+      "Events management app, manage by organizer. Include ticket stock, payment system with Stripe, qr promptpay and slipt verification.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
-    previewImg: "/media/product-demos/meet-more/meetmore.png",
+    previewImg: "/media/product-demos/meet-more/root-page.png",
+    // previewImg: "/media/product-demos/meet-more/meetmore.png",
     view: "",
-    source: "",
+    source: ["https://app.meet.co.th"],
   },
+  {
+    title: "Piika",
+    description:
+      "Weekly delivery app for flowers. This service for customer who love flower to decorate their place, weekly delivery. The customer can skip the delivery if they don't want to receive the flowers. The challenge is manage the order for the drivers and tracking the order status.",
+    type: "Web design",
+    responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
+    image: [],
+    // previewImg: "https://piika.co/assets/logo-BCWFnXWX.svg",
+    previewImg: "/media/product-demos/piika/root-page.png",
+    view: "",
+    source: ["https://piika.co/flowers"],
+  },
+  // {
+  //   title: "Flowers",
+  //   description:
+  //     "Flowers shop app, manage by admin. Include product management, order management, payment system with Stripe, qr promptpay and slipt verification.",
+  //   type: "Web design",
+  //   responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
+  //   image: [],
+  //   previewImg: "/media/product-demos/flowers/flowers.png",
+  //   view: "",
+  //   source: [""],
+  // },
   {
     title: "John (Booking App)",
-    description: "Description",
+    description:
+      "Reservation app for services. In massage, nail, salon, barber. Shop create their own service and booking by customer.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
-    previewImg: "/media/product-demos/john/booking.png",
+    // previewImg: "/media/product-demos/john/booking.png",
+    previewImg: "/media/product-demos/john/root-page.png",
     view: "",
-    source: "",
+    source: ["https://b.ms.co.th"],
   },
   {
     title: "ItrendX",
-    description: "Description",
+    description:
+      "Power monitoring for industry in each plant or site. Monitoring the consumption, power produce from powerplant or solarplant, separate in site. Role and permission management.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
     previewImg: "/media/product-demos/Itrend/itrend_1.png",
     view: "",
-    source: "",
+    source: [],
   },
   {
     title: "FPPMS",
-    description: "Description",
+    description:
+      "Industrail machine monitoring status, power consumption. Customer create application for testing produce their product that approve or reject by admin role.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
     previewImg: "/media/product-demos/FPPMS/fppms_1.png",
     view: "",
-    source: "",
+    source: [],
   },
   {
     title: "Portfolio 2022",
-    description: "Description",
+    description:
+      "My first portfolio website. Display the personal information, passions, projects, contact.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
     previewImg: "/media/product-demos/2022portfolio/port2022_1.png",
     view: "",
-    source: "",
+    source: [],
   },
   {
     title: "E-commerce",
-    description: "Description",
+    description:
+      "My first simple E-commerce when study about html, javascript, css, routing use free assets.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
     previewImg: "/media/product-demos/ecommerce-shirt/ecommerce_shirt_2.png",
     view: "",
-    source: "",
+    source: [],
   },
   //   {
   //     imgsrc: pro1,
