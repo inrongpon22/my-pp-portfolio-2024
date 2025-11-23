@@ -61,23 +61,20 @@ const WorkExperience = () => {
           </p>
           <div className="w-full max-w-4xl">
             <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gray-300"></div>
+              <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-6 w-0.5 h-[85%] bg-gray-300"></div>
               {timelineItems.map((item, index) => (
                 <div
                   key={index}
-                  className={`relative  mb-8 ${
-                    index % 2 === 0 ? "left-timeline" : "right-timeline"
-                  }`}
+                  className={`relative mb-8 ${index % 2 === 0 ? "left-timeline" : "right-timeline"
+                    }`}
                 >
                   <div
-                    className={`flex items-center ${
-                      index % 2 === 0 ? "justify-end" : "justify-start"
-                    }`}
+                    className={`flex items-center ${index % 2 === 0 ? "justify-end" : "justify-start"
+                      }`}
                   >
                     <div
-                      className={`w-1/2 ${
-                        index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
-                      }`}
+                      className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
+                        }`}
                     >
                       <div className="bg-white p-4 rounded-lg shadow-md dark:bg-slate-800 dark:border dark:border-slate-700">
                         <div className="text-sm text-gray-600 dark:text-gray-200 mb-2">
@@ -88,9 +85,11 @@ const WorkExperience = () => {
                     </div>
                   </div>
 
-                  <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-orange-400 rounded-full border-2 border-white shadow-md">
+                  <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-16 w-4 h-4 bg-orange-400 rounded-full border-2 border-white shadow-md">
                     {item.loading && (
-                      <LoaderCircle className="animate-spin text-white text-xs" />
+                      <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/4">
+                        <LoaderCircle className="animate-spin text-orange-500 text-xs" />
+                      </div>
                     )}
                   </div>
                 </div>

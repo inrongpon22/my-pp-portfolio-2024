@@ -1,15 +1,24 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "qavdigrfstszklsrdjsy.supabase.co",
+        pathname: "/storage/v1/object/sign/**",
+      },
+    ],
+  },
   webpack: (config) => {
     config.module.rules.push({
       test: /\.(glb|gltf)$/,
       use: {
-        loader: 'file-loader',
+        loader: "file-loader",
         options: {
-          outputPath: 'static/assets/',
-          publicPath: '/_next/static/assets/',
-          name: '[name].[hash].[ext]',
+          outputPath: "static/assets/",
+          publicPath: "/_next/static/assets/",
+          name: "[name].[hash].[ext]",
         },
       },
     })

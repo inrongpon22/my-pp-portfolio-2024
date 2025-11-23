@@ -10,7 +10,8 @@ const ProjectCard = ({ item }: { item: ProjectProps }): React.ReactNode => {
     <div className="flex flex-col gap-3 bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border-2 dark:border-slate-700 rounded-2xl shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-lg overflow-hidden">
       <Image
         alt={item.title}
-        src={item.previewImg}
+        src={item.previewImg || ""}
+        loading="lazy"
         className="w-full h-[300px] object-cover"
         width={200}
         height={100}
