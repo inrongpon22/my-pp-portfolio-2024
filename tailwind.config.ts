@@ -1,7 +1,8 @@
 import type { Config } from "tailwindcss"
 
 const config: Config = {
-  darkMode: ["selector", "class"],
+  darkMode: "class",
+  // darkMode: ["selector", "class"],
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -104,5 +105,10 @@ const config: Config = {
     },
     require("tailwindcss-animate"),
   ],
+  // daisyui: {
+  //   // This makes daisyUI respect Tailwind's dark mode
+  //   darkTheme: "dark",
+  //   themes: false, // Disable daisyUI themes to use Tailwind's dark mode
+  // },
 }
 export default config

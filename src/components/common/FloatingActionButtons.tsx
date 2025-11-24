@@ -11,9 +11,9 @@ const FloatingActionButtons = () => {
       <button
         type="button"
         onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-        className="btn btn-lg btn-circle bg-gray-100 dark:bg-gray-800"
+        className="btn btn-lg btn-circle bg-background"
       >
-        {theme === "dark" ? <Sun /> : <Moon  />}
+        {theme === "dark" ? <Sun /> : <Moon />}
       </button>
       {/* a focusable div with tabIndex is necessary to work on all browsers. role="button" is necessary for accessibility */}
       {/* <div

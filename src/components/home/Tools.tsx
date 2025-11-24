@@ -56,6 +56,14 @@ const tools: ToolProps[] = [
     title: "HighChart",
     icon: "./media/framework-logos/highcharts.svg",
   },
+  {
+    title: "Supabase",
+    icon: "",
+  },
+  {
+    title: "Cloudflare",
+    icon: "",
+  },
 ]
 
 const Tools = () => {

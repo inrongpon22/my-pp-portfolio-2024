@@ -7,7 +7,7 @@ import { cn } from "@/app/utils/cn"
 
 const ProjectCard = ({ item }: { item: ProjectProps }): React.ReactNode => {
   return (
-    <div className="flex flex-col gap-3 bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border-2 dark:border-slate-700 rounded-2xl shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-lg overflow-hidden">
+    <div className="flex flex-col gap-3 bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border-2 border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-lg overflow-hidden">
       <Image
         alt={item.title}
         src={item.previewImg || ""}

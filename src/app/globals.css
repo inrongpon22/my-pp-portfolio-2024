@@ -15,8 +15,8 @@
   --background-end-rgb: 255, 255, 255;
 } */
 
-:root {
-  /* Your default theme */
+/* Commented out - conflicts with HSL-based definitions below */
+/* :root {
   --background: white;
   --foreground: black;
 }
@@ -29,13 +29,15 @@
 .light {
   --background: white;
   --foreground: black;
-}
+} */
 
-body {
+/* Commented out - conflicts with HSL-based definitions */
+/* The @layer base section below handles body styling with proper HSL values */
+/* body {
   background-color: var(--background);
   color: var(--foreground);
   transition: background-color 0.3s ease, color 0.3s ease;
-}
+} */
 
 /* @media (prefers-color-scheme: dark) {
   :root {
@@ -142,19 +144,19 @@ body {
     }
   }
   @keyframes marquee {
-  from {
-    transform: translateX(0);
+    from {
+      transform: translateX(0);
     }
-  to {
-    transform: translateX(calc(-100% - var(--gap)));
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
     }
   }
   @keyframes marquee-vertical {
-  from {
-    transform: translateY(0);
+    from {
+      transform: translateY(0);
     }
-  to {
-    transform: translateY(calc(-100% - var(--gap)));
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }

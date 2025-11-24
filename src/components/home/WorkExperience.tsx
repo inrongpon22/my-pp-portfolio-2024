@@ -1,50 +1,74 @@
-import { LoaderCircle } from "lucide-react"
+"use client"
+
 import React from "react"
+import { BookOpen, GraduationCap, LoaderCircle, MonitorCog, Workflow } from "lucide-react"
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
+import 'react-vertical-timeline-component/style.min.css';
+
+interface TimelineItem {
+  date: string
+  position: string
+  company: string
+  description: string
+  icon?: React.ReactNode
+  iconStyle?: React.CSSProperties
+  contentStyle?: React.CSSProperties
+  contentArrowStyle?: React.CSSProperties
+  color?: string
+  inprogress?: boolean
+}
+
 
 const WorkExperience = () => {
-  const timelineItems = [
+  const timelineItems: TimelineItem[] = [
     {
-      label: "March 2022",
-      children: "Graduated in Faculty of Education, English",
+      date: "April 2024 - Present",
+      position: "Front-End Developer",
+      company: "MEET SOFTWARE CO., at Chiang Mai, Thailand",
+      description: "React, Tailwind, Nodejs, Express, SQL, PostgresQL, Docker",
+      inprogress: true,
+      icon: <LoaderCircle className="animate-spin text-xs" />,
+      iconStyle: { background: 'rgb(251, 146, 60)', color: '#fff' },
+      contentStyle: { background: 'rgb(251, 146, 60)', color: '#fff' },
+      contentArrowStyle: { borderRight: '7px solid  rgb(251, 146, 60)' }
+    },
+    {
+      date: "January 2023 - March 2024",
+      position: "Front-End Developer",
+      description: "React, Tailwind, Nodejs, Express, SQL, PostgresQL, Docker",
+      company: "React, Tailwind",
       color: "#fb923c",
+      icon: <MonitorCog />,
+      iconStyle: { background: 'rgb(33, 150, 243)', color: '#fff' },
+      contentStyle: { background: 'rgb(33, 150, 243)', color: '#fff' },
+      contentArrowStyle: { borderRight: '7px solid  rgb(33, 150, 243)' }
+
     },
     {
-      label: "March 2022 - December 2022",
-      children: "Practicing by myself",
+      date: "March 2022 - December 2022",
+      position: "Practicing by myself",
+      company: "",
+      description: "",
       color: "#fb923c",
+      icon: <BookOpen />,
+      iconStyle: { background: 'rgb(233, 30, 99)', color: '#fff' },
+      contentStyle: { background: 'rgb(233, 30, 99)', color: '#fff' },
+      contentArrowStyle: { borderRight: '7px solid  rgb(233, 30, 99)' }
+
     },
     {
-      label: "January 2023 - March 2024",
-      children: (
-        <div>
-          <p className="font-bold">Front-End Developer (React)</p>
-          <p>
-            <span className="font-semibold">Tools: </span>
-            <span>React, Tailwind</span>
-          </p>
-          <p className="text-xs">
-            ITTHIRIT TECHNOLOGY CO., LTD. at Chiang Mai, Thailand
-          </p>
-        </div>
-      ),
+      date: "March 2022",
+      position: "Graduated in Faculty of Education, English",
+      company: "Chiang Mai Rajabhat University, Thailand",
+      description: "",
       color: "#fb923c",
-    },
-    {
-      label: "April 2024 - Present",
-      children: (
-        <div>
-          <p className="font-bold">Front-End Developer</p>
-          <p>
-            <span className="font-semibold">Tools: </span>
-            <span>
-              React, Tailwind, Nodejs, Express, SQL, PostgresQL, Docker
-            </span>
-          </p>
-          <p className="text-xs">MEET SOFTWARE CO., at Chiang Mai, Thailand</p>
-        </div>
-      ),
-      loading: true,
-    },
+      icon: <GraduationCap />,
+      iconStyle: { background: 'rgb(233, 30, 99)', color: '#fff' },
+      contentStyle: { background: 'rgb(233, 30, 99)', color: '#fff' },
+      contentArrowStyle: { borderRight: '7px solid  rgb(233, 30, 99)' }
+
+
+    }
   ]
 
   return (
@@ -59,45 +83,33 @@ const WorkExperience = () => {
             <span className="text-gray-100 dark:text-gray-300 text-3xl sm:text-6xl">My Work</span>
             <span className="text-orange-400 text-3xl sm:text-6xl"> Experience</span>
           </p>
-          <div className="w-full max-w-4xl">
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 translate-y-6 w-0.5 h-[85%] bg-gray-300"></div>
-              {timelineItems.map((item, index) => (
-                <div
+          <VerticalTimeline>
+            {timelineItems.map((item: TimelineItem, index: number) => {
+              const { date, position, company, description, icon, iconStyle, contentStyle, contentArrowStyle } = item
+              return (
+                <VerticalTimelineElement
                   key={index}
-                  className={`relative mb-8 ${index % 2 === 0 ? "left-timeline" : "right-timeline"
-                    }`}
+                  className="vertical-timeline-element--work"
+                  contentStyle={contentStyle ? contentStyle : undefined}
+                  contentArrowStyle={contentArrowStyle ? contentArrowStyle : undefined}
+                  date={date}
+                  iconStyle={iconStyle ? iconStyle : undefined}
+                  icon={icon}
                 >
-                  <div
-                    className={`flex items-center ${index % 2 === 0 ? "justify-end" : "justify-start"
-                      }`}
-                  >
-                    <div
-                      className={`w-1/2 ${index % 2 === 0 ? "pr-8 text-right" : "pl-8 text-left"
-                        }`}
-                    >
-                      <div className="bg-white p-4 rounded-lg shadow-md dark:bg-slate-800 dark:border dark:border-slate-700">
-                        <div className="text-sm text-gray-600 dark:text-gray-200 mb-2">
-                          {item.label}
-                        </div>
-                        <div className="text-sm">{item.children}</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-16 w-4 h-4 bg-orange-400 rounded-full border-2 border-white shadow-md">
-                    {item.loading && (
-                      <div className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1/4">
-                        <LoaderCircle className="animate-spin text-orange-500 text-xs" />
-                      </div>
-                    )}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
+                  <h3 className="vertical-timeline-element-title">{position}</h3>
+                  <h4 className="vertical-timeline-element-subtitle">{company}</h4>
+                  {description && (
+                    <p>
+                      {description}
+                    </p>
+                  )}
+                </VerticalTimelineElement>
+              )
+            })}
+          </VerticalTimeline>
         </section>
       </div>
+
       <h1 className="html-tag sm:ml-4">{`</work-experience>`}</h1>
     </div>
   )

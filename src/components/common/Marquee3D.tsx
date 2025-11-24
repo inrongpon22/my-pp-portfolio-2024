@@ -6,15 +6,17 @@ import Image from "next/image"
 
 const ToolCard = (props: {
   title: string
-  icon: string
+  icon?: string
 }) => {
   const { title, icon } = props
   return (
     <div
       className="bg-slate-200 dark:bg-slate-800 flex flex-col items-center justify-center text-center p-5 rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-orange-400"
     >
-      <Image alt={title} src={icon} width={45} height={45} />
-      <span className="text-xs sm:text-lg">{title}</span>
+      {icon && (
+        <Image alt={title} src={icon} width={45} height={45} />
+      )}
+      <span className="text-foreground text-xs sm:text-lg">{title}</span>
     </div>
   )
 }
@@ -63,10 +65,10 @@ export function Marquee3D({ items }: { items: any[] }) {
         </Marquee>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-white to-transparent"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-white to-transparent"></div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-white to-transparent"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-white to-transparent"></div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-background to-transparent"></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background to-transparent"></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background to-transparent"></div>
     </div>
   )
 }
