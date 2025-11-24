@@ -1,10 +1,6 @@
 {
   "compilerOptions": {
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -22,37 +18,16 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@/media/*": [
-        "./public/media/*"
-      ],
-      "@/services/*": [
-        "./src/services/*"
-      ],
-      "@/supabase/*": [
-        "./src/app/utils/supabase/*"
-      ],
-      "@/api/*": [
-        "./src/app/api/*"
-      ],
-      "@/lib/*": [
-        "./src/app/lib/*"
-      ],
-      "@/contexts/*": [
-        "./src/app/contexts/*"
-      ]
+      "@/*": ["./src/*"],
+      "@/media/*": ["./public/media/*"],
+      "@/services/*": ["./src/services/*"],
+      "@/supabase/*": ["./src/app/utils/supabase/*"],
+      "@/api/*": ["./src/app/api/*"],
+      "@/lib/*": ["./src/lib/*"],
+      "@/contexts/*": ["./src/app/contexts/*"]
     },
     "target": "ES2017"
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    ".next/types/**/*.ts",
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
 }

@@ -2,14 +2,15 @@
 
 import React, { Suspense } from "react"
 // components
-import HeaderWrapper from "@/components/layout/header/HeaderWrapper"
-import About from "@/components/home/About"
+// import HeaderWrapper from "@/components/layout/header/HeaderWrapper"
+// import About from "@/components/home/About"
 import FooterWrapper from "@/components/layout/footer/FooterWrapper"
 import SubHeaderWrapper from "@/components/home/SubHeaderWrapper"
 import ProjectsWrapper from "@/components/home/ProjectsWrapper"
 import WorkExperience from "@/components/home/WorkExperience"
 import Tools from "@/components/home/Tools"
 import FloatingActionButtons from "@/components/common/FloatingActionButtons"
+import FadeInOnScroll from "@/components/common/FadeInOnScroll"
 
 const LoadingSpinner = () => (
   <div className="fixed inset-0 flex items-center justify-center bg-white bg-opacity-75 z-50">
@@ -21,22 +22,27 @@ export default function Home() {
   return (
     <Suspense fallback={<LoadingSpinner />}>
       <div className="relative w-full h-full max-w-8xl mx-auto">
-        {/* <div className="fixed top-0 left-1/2 transform -translate-x-1/2 w-full flex justify-center z-50">
-          <HeaderWrapper />
-        </div> */}
-
         <div className="flex flex-col gap-10 px-4 md:px-0">
-          <SubHeaderWrapper />
+          <FadeInOnScroll>
+            <SubHeaderWrapper />
+          </FadeInOnScroll>
 
-          <Tools />
+          <FadeInOnScroll>
+            <Tools />
+          </FadeInOnScroll>
 
-          {/* <About /> */}
+          <FadeInOnScroll>
+            <WorkExperience />
+          </FadeInOnScroll>
 
-          <WorkExperience />
+          <FadeInOnScroll>
+            <ProjectsWrapper />
+          </FadeInOnScroll>
 
-          <ProjectsWrapper />
+          <FadeInOnScroll>
+            <FooterWrapper />
+          </FadeInOnScroll>
 
-          <FooterWrapper />
         </div>
         <h1 className="html-tag text-orange-500">{`</html>`}</h1>
         <FloatingActionButtons />
