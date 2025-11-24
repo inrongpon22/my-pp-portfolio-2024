@@ -8,7 +8,7 @@ const FooterWrapper = () => {
     <div id="footer">
       <h1 className="html-tag sm:ml-4">{`<footer>`}</h1>
       <section className="flex justify-center sm:px-12">
-        <div className="bg-[#333] text-white rounded-3xl">
+        <div className="bg-[#333] text-white rounded-3xl w-full">
           <Contact />
           <div className="flex justify-between px-10 pb-10">
             <span>{moment().year()}© made by Phanupong</span>

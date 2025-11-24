@@ -1,7 +1,5 @@
 "use client"
 import LoadingState from "@/components/common/LoadingState"
-import { Modal } from "@/components/common/Modal"
-import ProjectForm from "@/components/modals/ProjectForm"
 import { useProjects } from "@/hooks/useProjects"
 import { projectServices } from "@/services/ProjectServices"
 import { Project } from "@/types/project"
@@ -37,9 +35,9 @@ const Projects = () => {
 
   const handleCloseModal = () => {
     setSelectedProject(null)
-    ;(
-      document.getElementById("project_form") as HTMLDialogElement
-    )?.close()
+      ; (
+        document.getElementById("project_form") as HTMLDialogElement
+      )?.close()
   }
 
   if (isLoading) return <LoadingState />
@@ -92,7 +90,7 @@ const Projects = () => {
         )}
       </div>
 
-      <Modal
+      {/* <Modal
         id="project_form"
         className="modal-bottom sm:modal-middle"
       >
@@ -104,7 +102,7 @@ const Projects = () => {
           }}
           onClose={handleCloseModal}
         />
-      </Modal>
+      </Modal> */}
     </div>
   )
 }

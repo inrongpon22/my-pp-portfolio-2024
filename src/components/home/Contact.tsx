@@ -34,7 +34,7 @@ const Contact = () => {
 
       <hr className="border-white my-4" />
       <div className=" leading-loose">
-        <div className="text-sm sm:text-base">
+        {/* <div className="text-sm sm:text-base">
           <p>Lorem ipsum dolor sit amet.</p>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut harum
@@ -43,9 +43,9 @@ const Contact = () => {
             tenetur eaque temporibus nemo repudiandae, quia provident, earum
             accusamus nulla quasi?
           </p>
-        </div>
+        </div> */}
 
-        <div className="pt-10 text-sm sm:text-base">
+        <div className="text-sm sm:text-base">
           <p className="text-2xl font-bold text-orange-400 underline">
             Contact
           </p>
