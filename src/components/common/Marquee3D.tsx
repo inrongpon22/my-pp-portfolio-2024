@@ -22,11 +22,16 @@ const ToolCard = (props: {
 
 export function Marquee3D({ items }: { items: any[] }) {
 
-  const firstRow = items.slice(0, items.length / 2)
-  const secondRow = items.slice(items.length / 2)
-  const thirdRow = items.slice(0, items.length / 2)
-  const fourthRow = items.slice(items.length / 2)
-  const fifthRow = items.slice(items.length / 2)
+  const firstRow = items.slice(0, 8)
+  const secondRow = items.slice(8, 16)
+  const thirdRow = items.slice(16, 24)
+  const fourthRow = items.slice(24, 32)
+  const fifthRow = items.slice(32, 40)
+  // const firstRow = items.slice(0, items.length / 2)
+  // const secondRow = items.slice(items.length / 2)
+  // const thirdRow = items.slice(0, items.length / 2)
+  // const fourthRow = items.slice(items.length / 2)
+  // const fifthRow = items.slice(0, items.length / 2)
 
   return (
     <div className="relative flex h-96 w-full flex-row items-center justify-center gap-2 overflow-hidden [perspective:300px]">

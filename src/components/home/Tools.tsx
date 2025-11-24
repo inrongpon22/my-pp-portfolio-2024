@@ -33,16 +33,100 @@ const tools: ToolProps[] = [
     icon: "/media/framework-logos/tailwind-css.svg",
   },
   {
+    title: "Emotion",
+    icon: "",
+  },
+  {
     title: "React",
     icon: "/media/framework-logos/React.png",
+  },
+  {
+    title: "React Router Dom",
+    icon: "",
+  },
+  {
+    title: "VITE",
+    icon: "",
   },
   {
     title: "Nextjs",
     icon: "/media/framework-logos/Next.js.png",
   },
   {
+    title: "React Hook Form",
+    icon: "https://react-hook-form.com/images/logo/react-hook-form-logo-only.svg",
+  },
+  {
+    title: "Redux",
+    icon: "",
+  },
+  {
+    title: "axios",
+    icon: "",
+  },
+  {
+    title: "swr",
+    icon: "",
+  },
+  {
+    title: "socket.io",
+    icon: "",
+  },
+  {
+    title: "Bruno",
+    icon: "",
+  },
+  {
+    title: "Postman",
+    icon: "",
+  },
+  {
+    title: "Formik",
+    icon: "",
+  },
+  {
+    title: "zod validation",
+    icon: "",
+  },
+  {
+    title: "yup validation",
+    icon: "",
+  },
+  {
+    title: "momentjs",
+    icon: "",
+  },
+  {
+    title: "dayjs",
+    icon: "",
+  },
+  {
+    title: "React Hot Toast",
+    icon: "",
+  },
+  {
     title: "Ant Design",
     icon: "/media/framework-logos/ant-design.svg",
+  },
+  {
+    title: "Shadcn UI",
+    icon: "/media/framework-logos/shadcnui-logo.svg",
+  },
+  {
+    title: "Material UI",
+    icon: "/media/framework-logos/mui-logo.svg",
+  },
+  {
+    title: "Lucide icon",
+    icon: "",
+  },
+  {
+    title: "Font Awsome icon",
+    icon: "",
+  },
+  {
+    title: "daisyUI",
+    icon: "https://img.daisyui.com/images/daisyui/mark-static.svg",
   },
   {
     title: "Metronics Theme",
@@ -58,11 +142,34 @@ const tools: ToolProps[] = [
   },
   {
     title: "Supabase",
-    icon: "",
+    icon: "/media/framework-logos/supabase-logo-icon.png",
   },
   {
     title: "Cloudflare",
+    icon: "/media/framework-logos/cloudflare.png",
+  },
+  {
+    title: "Stripe",
+    icon: "/media/framework-logos/Stripe_Logo.webp",
+  },
+  {
+    title: "ngrok",
+    icon: "https://cdn.prod.website-files.com/63ed4bc7a4b189da942a6b8c/6411ffa0b395a44345ed2b1a_Frame%201.svg",
+  },
+  {
+    title: "qr.react",
     icon: "",
+  },
+]
+
+const cssFrameworks = [
+  {
+    title: "Bootstrap",
+    icon: "/media/framework-logos/bootstrap.png",
+  },
+  {
+    title: "Tailwind",
+    icon: "/media/framework-logos/tailwind-css.svg",
   },
 ]
 
