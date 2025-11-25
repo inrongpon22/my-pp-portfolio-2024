@@ -34,7 +34,7 @@ const tools: ToolProps[] = [
   },
   {
     title: "Emotion",
-    icon: "",
+    icon: "https://emotion.sh/logo-96x96.png",
   },
   {
     title: "React",
@@ -42,11 +42,11 @@ const tools: ToolProps[] = [
   },
   {
     title: "React Router Dom",
-    icon: "",
+    icon: "/media/framework-logos/rr_logo_dark.svg",
   },
   {
     title: "VITE",
-    icon: "",
+    icon: "https://vite.dev/logo.svg",
   },
   {
     title: "Nextjs",
@@ -58,51 +58,51 @@ const tools: ToolProps[] = [
   },
   {
     title: "Redux",
+    icon: "https://redux.js.org/img/redux.svg",
+  },
+  {
+    title: "Axios",
+    icon: "/media/framework-logos/axios.svg",
+  },
+  {
+    title: "SWR",
     icon: "",
   },
   {
-    title: "axios",
-    icon: "",
-  },
-  {
-    title: "swr",
-    icon: "",
-  },
-  {
-    title: "socket.io",
-    icon: "",
+    title: "Socket.io",
+    icon: "https://socket.io/images/logo-dark.svg",
   },
   {
     title: "Bruno",
-    icon: "",
+    icon: "/media/framework-logos/bruno.svg",
   },
   {
     title: "Postman",
-    icon: "",
+    icon: "https://voyager.postman.com/logo/postman-logo-icon-orange.svg",
   },
   {
     title: "Formik",
     icon: "",
   },
   {
-    title: "zod validation",
+    title: "Zod",
+    icon: "/media/framework-logos/zod-logo-white.webp",
+  },
+  {
+    title: "Yup",
     icon: "",
   },
   {
-    title: "yup validation",
+    title: "Momentjs",
     icon: "",
   },
   {
-    title: "momentjs",
-    icon: "",
-  },
-  {
-    title: "dayjs",
-    icon: "",
+    title: "Dayjs",
+    icon: "https://day.js.org/img/logo.png",
   },
   {
     title: "React Hot Toast",
-    icon: "",
+    icon: "/media/framework-logos/react-hot-toast-logo.svg",
   },
   {
     title: "Ant Design",
@@ -118,11 +118,11 @@ const tools: ToolProps[] = [
   },
   {
     title: "Lucide icon",
-    icon: "",
+    icon: "https://lucide.dev/logo.dark.svg",
   },
   {
     title: "Font Awsome icon",
-    icon: "",
+    icon: "/media/framework-logos/fontawesome-logo.svg",
   },
   {
     title: "daisyUI",
@@ -159,17 +159,6 @@ const tools: ToolProps[] = [
   {
     title: "qr.react",
     icon: "",
-  },
-]
-
-const cssFrameworks = [
-  {
-    title: "Bootstrap",
-    icon: "/media/framework-logos/bootstrap.png",
-  },
-  {
-    title: "Tailwind",
-    icon: "/media/framework-logos/tailwind-css.svg",
   },
 ]
 

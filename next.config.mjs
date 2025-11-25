@@ -8,6 +8,16 @@ const nextConfig = {
         hostname: "qavdigrfstszklsrdjsy.supabase.co",
         pathname: "/storage/v1/object/sign/**",
       },
+      {
+        protocol: "https",
+        hostname: "emotion.sh",
+        pathname: "/logo-96x96.png",
+      },
+      {
+        protocol: "https",
+        hostname: "day.js.org",
+        pathname: "/img/logo.png",
+      },
     ],
   },
   webpack: (config) => {
