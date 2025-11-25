@@ -34,7 +34,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "Meet More",
     description:
-      "Events management app, manage by organizer. Include ticket stock, payment system with Stripe, qr promptpay and slipt verification.",
+      "Events management platform for organizers, featuring ticket stock, Stripe and QR payment systems, and slip verification.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
@@ -46,7 +46,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "Piika",
     description:
-      "Weekly delivery app for flowers. This service for customer who love flower to decorate their place, weekly delivery. The customer can skip the delivery if they don't want to receive the flowers. The challenge is manage the order for the drivers and tracking the order status.",
+      "Weekly flower delivery service enabling customers to manage subscriptions, skip deliveries, and track orders, with a focus on efficient driver logistics.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
@@ -69,7 +69,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "John (Booking App)",
     description:
-      "Reservation app for services. In massage, nail, salon, barber. Shop create their own service and booking by customer.",
+      "Service reservation application for businesses like massage, nail, salon, and barber shops, allowing businesses to create services, manage their own open hours and customers to book appointments.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND, Responsibilities.BACKEND],
     image: [],
@@ -81,7 +81,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "ItrendX",
     description:
-      "Power monitoring for industry in each plant or site. Monitoring the consumption, power produce from powerplant or solarplant, separate in site. Role and permission management.",
+      "Industrial power monitoring system for plants and sites, tracking consumption and production from power plants or solar, with role and permission management.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
@@ -93,7 +93,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "FPPMS",
     description:
-      "Industrail machine monitoring status, power consumption. Customer create application for testing produce their product that approve or reject by admin role.",
+      "Industrial machine monitoring system tracking status and power consumption. Includes a customer application for product testing with admin approval.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
@@ -105,7 +105,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "Portfolio 2022",
     description:
-      "My first portfolio website. Display the personal information, passions, projects, contact.",
+      "First personal portfolio website showcasing personal information, passions, projects, and contact details.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],
@@ -117,7 +117,7 @@ const getProjectsData: ProjectProps[] = [
   {
     title: "E-commerce",
     description:
-      "My first simple E-commerce when study about html, javascript, css, routing use free assets.",
+      "A foundational e-commerce project built with HTML, CSS, JavaScript, and routing, utilizing free assets for a simple shopping experience.",
     type: "Web design",
     responsibilities: [Responsibilities.FRONTEND],
     image: [],

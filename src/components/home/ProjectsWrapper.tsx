@@ -3,7 +3,7 @@
 import React, { useState } from "react"
 import getProjectsData, { ProjectProps, Responsibilities } from "./getProjects"
 import Image from "next/image"
-import { cn } from "@/app/utils/cn"
+// import { cn } from "@/app/utils/cn"
 import { Modal } from "../common/Modal"
 
 const ProjectCard = (props: { item: ProjectProps, onView: () => void }): React.ReactNode => {
