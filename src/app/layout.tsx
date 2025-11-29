@@ -3,6 +3,8 @@ import "./globals.css"
 import { Inter } from "next/font/google"
 import { Toaster } from "react-hot-toast"
 import { ThemeProvider } from "next-themes"
+import { Analytics } from '@vercel/analytics/next';
+
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -33,6 +35,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}
+          <Analytics />
         </ThemeProvider>
         <Toaster position="top-center" />
       </body>
