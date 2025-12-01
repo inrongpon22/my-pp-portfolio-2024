@@ -53,7 +53,7 @@ export async function POST(request: NextRequest) {
       status: 200,
     })
   } catch (error) {
-    console.error('[sign-up]', error)
+    console.error('[sign-up] error', error)
     return new Response(JSON.stringify('Something went wrong'), {
       status: 500,
     })

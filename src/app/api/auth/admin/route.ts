@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
+import { createClient } from '@/app/utils/supabase/client'
 
 export async function GET(request: NextRequest) {
   const token = request.headers.get('Authorization')?.split(' ')[1]
@@ -10,10 +10,7 @@ export async function GET(request: NextRequest) {
     })
   }
   try {
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    )
+    const supabase = createClient()
 
     // check if token is exist, not revoked, not expired
     const { data, error } = await supabase

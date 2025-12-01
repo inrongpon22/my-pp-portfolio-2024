@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Sidebar from './Sidebar'
 import Navbar from './Navbar'
 import { AuthProvider } from '../contexts/AuthContext'
+import FloatingActionButtons from '@/components/common/FloatingActionButtons'
 
 export const metadata: Metadata = {
   title: 'Admin',
@@ -51,6 +52,7 @@ export default function AdminLayout({
             {children}
           </div>
         </div>
+        <FloatingActionButtons />
       </div>
     </AuthProvider>
   )
