@@ -17,6 +17,7 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
       "@/media/*": ["./public/media/*"],
@@ -24,7 +25,8 @@
       "@/supabase/*": ["./src/app/utils/supabase/*"],
       "@/api/*": ["./src/app/api/*"],
       "@/lib/*": ["./src/lib/*"],
-      "@/contexts/*": ["./src/app/contexts/*"]
+      "@/contexts/*": ["./src/app/contexts/*"],
+      "@/components/*": ["./src/components/*"]
     },
     "target": "ES2017"
   },

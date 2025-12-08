@@ -3,11 +3,15 @@
 import React, { useState } from "react"
 import getProjectsData, { ProjectProps, Responsibilities } from "./getProjects"
 import Image from "next/image"
-// import { cn } from "@/app/utils/cn"
+import { cn } from "@/app/utils/cn"
 import { Modal } from "../common/Modal"
+import ProjectDetailModal from "../common/ProjectDetailModal"
 
-const ProjectCard = (props: { item: ProjectProps, onView: () => void }): React.ReactNode => {
-  const { item, onView } = props;
+const ProjectCard = (props: {
+  item: ProjectProps
+  onView: () => void
+}): React.ReactNode => {
+  const { item, onView } = props
   return (
     <div className="flex flex-col gap-3 bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border-2 border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-lg overflow-hidden">
       <Image
@@ -37,13 +41,16 @@ const ProjectCard = (props: { item: ProjectProps, onView: () => void }): React.R
         <div className="flex items-center justify-between">
           <span className="text-sm font-base">{item.description}</span>
         </div>
-        {/* <button
+        <button
           type="button"
-          className={cn("bg-slate-800 dark:bg-slate-300 text-white dark:text-black p-2 px-4 rounded-xl", item.source.length === 0 && "hidden")}
+          className={cn(
+            "bg-slate-800 dark:bg-slate-300 text-white dark:text-black p-2 px-4 rounded-xl",
+            item.source.length === 0 && "hidden"
+          )}
           onClick={onView}
         >
           View Project Details
-        </button> */}
+        </button>
       </div>
     </div>
   )
@@ -51,22 +58,34 @@ const ProjectCard = (props: { item: ProjectProps, onView: () => void }): React.R
 
 const ProjectsWrapper = () => {
   const [show, setShow] = useState<boolean>(false)
+  const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(
+    null
+  )
+
   return (
     <div id="projects">
       <h1 className="html-tag sm:ml-4">{`<projects>`}</h1>
       <section className="flex flex-col gap-10 sm:px-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 sm:px-4 md:px-0">
           {getProjectsData?.map((item: ProjectProps, index: number) => {
-            return <ProjectCard key={index} item={item} onView={() => setShow(true)} />
+            return (
+              <ProjectCard
+                key={index}
+                item={item}
+                onView={() => {
+                  setShow(true)
+                  setSelectedProject(item)
+                }}
+              />
+            )
           })}
         </div>
       </section>
       <h1 className="html-tag sm:ml-4">{`</projects>`}</h1>
-      {show && (
-        <Modal id="project_form" onClose={() => setShow(false)}>
-          Hello world
-        </Modal>
-      )}
+      <ProjectDetailModal
+        show={[show, setShow]}
+        project={selectedProject}
+      />
     </div>
   )
 }
