@@ -20,6 +20,7 @@ import { ProjectProps } from "@/components/home/getProjects"
 import { Github, Globe } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
+import { Lens } from "@/components/ui/lens"
 
 const ProjectDetailModal = (props: {
   show: [boolean, Dispatch<SetStateAction<any | null>>]
@@ -28,7 +29,7 @@ const ProjectDetailModal = (props: {
   const { show, project } = props
   const [showModal, setShowModal] = show
 
-  const [fullImageModal, setFullImageModal] = useState(false)
+  const [fullImageModal, setFullImageModal] = useState<boolean>(false)
 
   if (!project) return null
 
@@ -40,15 +41,17 @@ const ProjectDetailModal = (props: {
             <DialogTitle>{project.title}</DialogTitle>
           </DialogHeader>
           <div className="grid grid-cols-12 gap-4">
-            <Carousel className="col-span-12 md:col-span-6">
+            <Carousel className="col-span-12 md:col-span-6 bg-gray-200 rounded-lg">
               <CarouselContent>
                 {project.image.map((image: string, index: number) => (
                   <CarouselItem key={index}>
                     <div className="p-1">
                       <Image
                         src={image}
+                        width={500}
+                        height={500}
                         alt={project.title}
-                        className="w-full h-[300px] md:h-full object-contain md:object-cover"
+                        className="w-full h-[300px] md:h-full object-contain md:object-cover rounded-lg"
                         onClick={() => setFullImageModal(true)}
                       />
                     </div>
@@ -84,13 +87,13 @@ const ProjectDetailModal = (props: {
                         className={cn("w-full")}
                       >
                         {isGithub ? (
-                          <>
+                          <div>
                             <Github /> Github
-                          </>
+                          </div>
                         ) : (
-                          <>
+                          <div>
                             <Globe /> Visit
-                          </>
+                          </div>
                         )}
                       </Button>
                     )
@@ -109,20 +112,29 @@ const ProjectDetailModal = (props: {
         open={fullImageModal}
         onOpenChange={() => setFullImageModal(false)}
       >
-        <DialogContent>
+        <DialogContent className="sm:max-w-[calc(100%-10rem)] sm:max-h-[90vh]">
           <DialogHeader>
             <DialogTitle>{project.title}</DialogTitle>
           </DialogHeader>
           <Carousel className="col-span-12 md:col-span-6">
             <CarouselContent>
               {project.image.map((image: string, index: number) => (
-                <CarouselItem key={index}>
-                  <div className="p-1">
-                    <Image
-                      src={image}
-                      alt={project.title}
-                      className="w-full h-full md:h-full object-contain md:object-cover"
-                    />
+                <CarouselItem key={index} className="bg-gray-200 rounded-lg">
+                  <div className="p-1 flex items-center justify-center">
+                    {/* <Lens zoomFactor={1.5}> */}
+                    <div className="relative w-full h-[600px] sm:h-[800px]">
+                      <Image
+                        src={image}
+                        alt={project.title}
+                        fill={true}
+                        objectFit="contain"
+                        loading="lazy"
+                        placeholder="blur"
+                        blurDataURL={image}
+                        className="rounded-lg"
+                      />
+                    </div>
+                    {/* </Lens> */}
                   </div>
                 </CarouselItem>
               ))}
