@@ -80,7 +80,7 @@ const WorkExperience = () => {
           className="h-full w-full flex flex-col justify-center items-center gap-10 rounded-2xl py-10"
         >
           <p className="text-center md:text-left text-3xl sm:text-6xl font-bold">
-            <span className="text-gray-100 dark:text-gray-300 text-3xl sm:text-6xl">My Work</span>
+            <span className="text-gray-700 dark:text-gray-300 text-3xl sm:text-6xl">My Work</span>
             <span className="text-orange-400 text-3xl sm:text-6xl"> Experience</span>
           </p>
           <VerticalTimeline>
