@@ -1,7 +1,6 @@
 "use client"
 /* eslint-disable @next/next/no-img-element */
 import { Marquee } from "@/components/ui/marquee"
-import Image from "next/image"
 
 const ToolCard = (props: {
   title: string
@@ -13,7 +12,8 @@ const ToolCard = (props: {
       className="bg-slate-200 dark:bg-slate-800 flex flex-col items-center justify-center text-center p-5 rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-orange-400"
     >
       {icon && (
-        <Image alt={title} src={icon} width={45} height={45} />
+        // eslint-disable-next-line @next/next/no-img-element
+        <img alt={title} src={icon} width={45} height={45} />
       )}
       <span className="text-foreground text-xs sm:text-lg">{title}</span>
     </div>

@@ -3,17 +3,19 @@
 import React, { useState } from "react"
 import getProjectsData, { ProjectProps, Responsibilities } from "./getProjects"
 import Image from "next/image"
-import { cn } from "@/app/utils/cn"
-import { Modal } from "../common/Modal"
 import ProjectDetailModal from "../common/ProjectDetailModal"
+import { Button } from "@/components/ui/button"
+import { cn } from "@/lib/utils"
+import { Github, Globe } from "lucide-react"
 
 const ProjectCard = (props: {
   item: ProjectProps
   onView: () => void
 }): React.ReactNode => {
   const { item, onView } = props
+
   return (
-    <div className="flex flex-col gap-3 bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border-2 border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-lg overflow-hidden">
+    <div className="flex flex-col gap-3 bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border-2 border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-lg overflow-hidden h-full">
       <Image
         alt={item.title}
         src={item.previewImg || ""}
@@ -22,7 +24,7 @@ const ProjectCard = (props: {
         width={200}
         height={100}
       />
-      <div className="flex flex-col gap-2 p-4">
+      <div className="flex flex-col gap-2 p-4 flex-1">
         <div className="flex flex-wrap gap-2">
           {item.responsibilities.map((responsibility: Responsibilities) => {
             return (
@@ -35,22 +37,49 @@ const ProjectCard = (props: {
             )
           })}
         </div>
-        <div className="flex items-center justify-between">
-          <span className="text-xl font-extrabold">{item.title}</span>
+        <div>
+          <div className="flex items-center justify-between">
+            <span className="text-xl font-extrabold">{item.title}</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-sm font-base line-clamp-4">
+              {item.description}
+            </span>
+          </div>
         </div>
-        <div className="flex items-center justify-between">
-          <span className="text-sm font-base">{item.description}</span>
+        <div className="flex-1" />
+        <div className="flex gap-2">
+          <Button
+            type="button"
+            variant="outline"
+            onClick={onView}
+            className="w-full"
+          >
+            Details
+          </Button>
+          {item.source.length > 0 &&
+            item.source.map((url) => {
+              const isGithub = url.includes("github")
+              return (
+                <Button
+                  key={url}
+                  type="button"
+                  onClick={() => window.open(url, "_blank")}
+                  className={cn("w-full")}
+                >
+                  {isGithub ? (
+                    <>
+                      <Github /> Github
+                    </>
+                  ) : (
+                    <>
+                      <Globe /> Visit
+                    </>
+                  )}
+                </Button>
+              )
+            })}
         </div>
-        <button
-          type="button"
-          className={cn(
-            "bg-slate-800 dark:bg-slate-300 text-white dark:text-black p-2 px-4 rounded-xl",
-            item.source.length === 0 && "hidden"
-          )}
-          onClick={onView}
-        >
-          View Project Details
-        </button>
       </div>
     </div>
   )
@@ -82,10 +111,7 @@ const ProjectsWrapper = () => {
         </div>
       </section>
       <h1 className="html-tag sm:ml-4">{`</projects>`}</h1>
-      <ProjectDetailModal
-        show={[show, setShow]}
-        project={selectedProject}
-      />
+      <ProjectDetailModal show={[show, setShow]} project={selectedProject} />
     </div>
   )
 }
