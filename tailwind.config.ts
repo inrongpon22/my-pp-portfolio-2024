@@ -91,7 +91,6 @@ const config: Config = {
     },
   },
   plugins: [
-    require("daisyui"),
     function ({ addUtilities, theme, e }: any) {
       const textShadows = theme("textShadow")
       const utilities = Object.entries(textShadows).map(([key, value]: any) => {
@@ -105,10 +104,5 @@ const config: Config = {
     },
     require("tailwindcss-animate"),
   ],
-  // daisyui: {
-  //   // This makes daisyUI respect Tailwind's dark mode
-  //   darkTheme: "dark",
-  //   themes: false, // Disable daisyUI themes to use Tailwind's dark mode
-  // },
 }
 export default config
