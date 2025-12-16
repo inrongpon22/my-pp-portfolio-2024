@@ -27,11 +27,6 @@ export function Marquee3D({ items }: { items: any[] }) {
   const thirdRow = items.slice(16, 24)
   const fourthRow = items.slice(24, 32)
   const fifthRow = items.slice(32, 40)
-  // const firstRow = items.slice(0, items.length / 2)
-  // const secondRow = items.slice(items.length / 2)
-  // const thirdRow = items.slice(0, items.length / 2)
-  // const fourthRow = items.slice(items.length / 2)
-  // const fifthRow = items.slice(0, items.length / 2)
 
   return (
     <div className="relative flex h-96 w-full flex-row items-center justify-center gap-2 overflow-hidden [perspective:300px]">
@@ -69,10 +64,10 @@ export function Marquee3D({ items }: { items: any[] }) {
         </Marquee>
       </div>
 
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-background to-transparent"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background to-transparent"></div>
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background to-transparent"></div>
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background to-transparent"></div>
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-background to-transparent" style={{ transform: 'translate3d(0, 0, 1px)', willChange: 'transform' }}></div>
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-background to-transparent" style={{ transform: 'translate3d(0, 0, 1px)', willChange: 'transform' }}></div>
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-background to-transparent" style={{ transform: 'translate3d(0, 0, 1px)', willChange: 'transform' }}></div>
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-background to-transparent" style={{ transform: 'translate3d(0, 0, 1px)', willChange: 'transform' }}></div>
     </div>
   )
 }
