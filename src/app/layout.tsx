@@ -4,6 +4,7 @@ import { Inter } from "next/font/google"
 import { Toaster } from "react-hot-toast"
 import { ThemeProvider } from "next-themes"
 import { Analytics } from '@vercel/analytics/next';
+import PageLoader from "@/components/common/PageLoader"
 
 
 const inter = Inter({ subsets: ["latin"] })
@@ -34,6 +35,7 @@ export default function RootLayout({
       {/* className={inter.className} */}
       <body>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
+          <PageLoader />
           {children}
           <Analytics />
         </ThemeProvider>
