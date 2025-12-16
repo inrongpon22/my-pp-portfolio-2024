@@ -2,7 +2,15 @@
 
 import React from "react"
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react"
+import {
+  Facebook,
+  Github,
+  Instagram,
+  Linkedin,
+  LinkedinIcon,
+  Mail,
+  Twitter,
+} from "lucide-react"
 
 const contactIcons = [
   {
@@ -30,26 +38,47 @@ const contactIcons = [
 const Contact = () => {
   return (
     <section id="contact" className="px-4 sm:px-10 pt-10">
-      <span className="text-3xl sm:text-6xl font-bold">Get in touch</span>
+      <span className="text-3xl sm:text-6xl font-bold">Phanupong Inrongpon</span>
 
       <hr className="border-white my-4" />
-      <div className=" leading-loose">
-        {/* <div className="text-sm sm:text-base">
-          <p>Lorem ipsum dolor sit amet.</p>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut harum
-            quae nihil sint aspernatur error, ad est explicabo! Amet aliquid
-            ducimus eveniet, modi cum sed cupiditate deserunt illo ratione
-            tenetur eaque temporibus nemo repudiandae, quia provident, earum
-            accusamus nulla quasi?
-          </p>
-        </div> */}
+      <div className="leading-loose space-y-4">
+        <h2 className="text-xl md:text-2xl font-bold text-white">I develop websites and web applications.</h2>
+        <p className="text-base md:text-lg font-light text-white">
+          As a passionate frontend developer, I thrive on bringing ideas to life
+          through interactive and visually appealing user interfaces. My
+          enthusiasm for crafting seamless digital experiences drives me to
+          continuously learn new technologies and stay updated with the latest
+          trends in web development. Currently based in Chiang Mai, I am
+          dedicated to delivering high-quality solutions that make an impact and
+          provide exceptional value to users.
+        </p>
 
         <div className="text-sm sm:text-base">
-          <p className="text-2xl font-bold text-orange-400 underline">
-            Contact
-          </p>
-          <ul>
+          <p className="text-2xl font-bold text-white underline">Contact</p>
+          <div className="flex gap-4 pt-4">
+            <a
+              href="mailto:inrongpon.phanupong2@gmail.com"
+              target="_blank"
+              className="flex items-center gap-2 bg-orange-400 p-2 rounded-md hover:bg-orange-500 transition-all duration-300"
+            >
+              <Mail className="text-white" />
+            </a>
+            <a
+              href="https://github.com/inrongpon22"
+              target="_blank"
+              className="flex items-center gap-2 bg-orange-400 p-2 rounded-md hover:bg-orange-500 transition-all duration-300"
+            >
+              <Github className="text-white" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/phanupong-inrongpon-6aa97b25a"
+              target="_blank"
+              className="flex items-center gap-2 bg-orange-400 p-2 rounded-md hover:bg-orange-500 transition-all duration-300"
+            >
+              <LinkedinIcon className="text-white" />
+            </a>
+          </div>
+          {/* <ul>
             <li className="flex items-center gap-2">
               <span className="text-orange-400 font-bold text-sm sm:text-base">Email:</span>
               <Link
@@ -70,7 +99,7 @@ const Contact = () => {
                 Github
               </Link>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
       {/* <ThemeSwitcher /> */}
