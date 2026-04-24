@@ -22,12 +22,23 @@ interface TimelineItem {
 const WorkExperience = () => {
   const timelineItems: TimelineItem[] = [
     {
-      date: "April 2024 - Present",
+      date: "January 2026 - Present",
+      position: "Software Engineer",
+      company: "NCNXLABS Co.,Ltd , Chiang Mai, Thailand",
+      description: "Vue2, Vuetify, Nodejs, OOP, DDD, EDA, Kafka, Redis, Docker",
+      inprogress: true,
+      icon: <LoaderCircle className="animate-spin text-xs" />,
+      iconStyle: { background: 'rgb(33, 150, 243)', color: '#fff' },
+      contentStyle: { background: 'rgb(33, 150, 243)', color: '#fff' },
+      contentArrowStyle: { borderRight: '7px solid  rgb(33, 150, 243)' }
+    },
+    {
+      date: "April 2024 - December 2025",
       position: "Front-End Developer",
       company: "MEET SOFTWARE CO., at Chiang Mai, Thailand",
       description: "React, Tailwind, Nodejs, Express, SQL, PostgresQL, Docker",
       inprogress: true,
-      icon: <LoaderCircle className="animate-spin text-xs" />,
+      icon: <MonitorCog />,
       iconStyle: { background: 'rgb(251, 146, 60)', color: '#fff' },
       contentStyle: { background: 'rgb(251, 146, 60)', color: '#fff' },
       contentArrowStyle: { borderRight: '7px solid  rgb(251, 146, 60)' }
