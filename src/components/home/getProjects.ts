@@ -178,17 +178,13 @@ const getProjectsData: ProjectProps[] = [
 		type: "Web design",
 		responsibilities: [Responsibilities.FRONTEND],
 		image: [
-			"https://qavdigrfstszklsrdjsy.supabase.co/storage/v1/object/sign/my-bucket/project_images/simple-e-commerce/mobile-design.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YzQ5OWYzMi0xOGM0LTRhOTQtYmNmMC1kYzkxMGY2MjQ1ZGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJteS1idWNrZXQvcHJvamVjdF9pbWFnZXMvc2ltcGxlLWUtY29tbWVyY2UvbW9iaWxlLWRlc2lnbi5qcGciLCJpYXQiOjE3NjUxODUwODgsImV4cCI6MTc5NjcyMTA4OH0.a4joxlrEN6e1q0UvlMVY2KiPMhUUlfwOf4G-_WYkPTc",
-			"https://qavdigrfstszklsrdjsy.supabase.co/storage/v1/object/sign/my-bucket/project_images/simple-e-commerce/active-states-basket-filled.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YzQ5OWYzMi0xOGM0LTRhOTQtYmNmMC1kYzkxMGY2MjQ1ZGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJteS1idWNrZXQvcHJvamVjdF9pbWFnZXMvc2ltcGxlLWUtY29tbWVyY2UvYWN0aXZlLXN0YXRlcy1iYXNrZXQtZmlsbGVkLmpwZyIsImlhdCI6MTc2NTE4NTAyNSwiZXhwIjoxNzk2NzIxMDI1fQ.cVUlssOCiO2FR6jRcwILDRb4fCwcIfl77BL_GK3AZH0",
-			"https://qavdigrfstszklsrdjsy.supabase.co/storage/v1/object/sign/my-bucket/project_images/simple-e-commerce/active-states-lightbox.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YzQ5OWYzMi0xOGM0LTRhOTQtYmNmMC1kYzkxMGY2MjQ1ZGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJteS1idWNrZXQvcHJvamVjdF9pbWFnZXMvc2ltcGxlLWUtY29tbWVyY2UvYWN0aXZlLXN0YXRlcy1saWdodGJveC5qcGciLCJpYXQiOjE3NjUxODUwMzcsImV4cCI6MTc5NjcyMTAzN30.qcre7CfAvFGD-XjTvwp0Zd5bH5mBMiGLBM2QqyzA0Gs",
-			"https://qavdigrfstszklsrdjsy.supabase.co/storage/v1/object/sign/my-bucket/project_images/simple-e-commerce/mobile-design-basket-filled.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YzQ5OWYzMi0xOGM0LTRhOTQtYmNmMC1kYzkxMGY2MjQ1ZGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJteS1idWNrZXQvcHJvamVjdF9pbWFnZXMvc2ltcGxlLWUtY29tbWVyY2UvbW9iaWxlLWRlc2lnbi1iYXNrZXQtZmlsbGVkLmpwZyIsImlhdCI6MTc2NTE4NTA3MCwiZXhwIjoxNzk2NzIxMDcwfQ.wUMauzZT9gB4rCwrvuuLUyyVKdNL7JGDtJIyqJu0o-M",
 			"/media/product-demos/ecommerce-shirt/ecommerce_shirt_1.png",
 			"/media/product-demos/ecommerce-shirt/ecommerce_shirt_2.png",
 			"/media/product-demos/ecommerce-shirt/ecommerce_shirt_3.png",
 			"/media/product-demos/ecommerce-shirt/ecommerce_shirt_4.png",
 		],
 		previewImg:
-			"https://qavdigrfstszklsrdjsy.supabase.co/storage/v1/object/sign/my-bucket/project_images/simple-e-commerce/active-states-basket-filled.jpg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV83YzQ5OWYzMi0xOGM0LTRhOTQtYmNmMC1kYzkxMGY2MjQ1ZGIiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJteS1idWNrZXQvcHJvamVjdF9pbWFnZXMvc2ltcGxlLWUtY29tbWVyY2UvYWN0aXZlLXN0YXRlcy1iYXNrZXQtZmlsbGVkLmpwZyIsImlhdCI6MTc2MzkxNjYxOSwiZXhwIjoxNzk1NDUyNjE5fQ.C7LUlVYaSeBpPWUUAKwEmuInzFRwJVYiqJJF1ZSJpds",
+			"/media/product-demos/ecommerce-shirt/ecommerce_shirt_1.png",
 		view: "",
 		source: [],
 	},
