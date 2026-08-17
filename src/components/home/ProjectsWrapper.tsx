@@ -53,14 +53,14 @@ const ProjectCard = (props: {
 				</div>
 				<div className="flex-1" />
 				<div className="flex gap-2">
-					<Button
+					{/* <Button
 						type="button"
 						variant="outline"
 						onClick={onView}
 						className="w-full"
 					>
 						Details
-					</Button>
+					</Button> */}
 					{item.source.length > 0 &&
 						item.source.map((url) => {
 							const isGithub = url.includes("github")
