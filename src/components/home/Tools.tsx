@@ -1,190 +1,120 @@
 import React from "react"
-import Image from "next/image"
-import { Marquee3D } from "../common/Marquee3D"
+import { ChartColumn } from "lucide-react"
+import PfTag from "@/components/common/PfTag"
+import TechIcon from "@/components/common/TechIcon"
 
-interface ToolProps {
-  title: string
-  icon: string
+interface ToolItem {
+	name: string
+	slug?: string
+	src?: string
+	icon?: React.ComponentType<{ className?: string }>
 }
 
-const tools: ToolProps[] = [
-  {
-    title: "HTML",
-    icon: "/media/framework-logos/html.png",
-  },
-  {
-    title: "CSS",
-    icon: "/media/framework-logos/css-3.svg",
-  },
-  {
-    title: "Javascript",
-    icon: "/media/framework-logos/javascript.svg",
-  },
-  {
-    title: "Typecript",
-    icon: "/media/framework-logos/file-type-typescript-official.svg",
-  },
-  {
-    title: "Bootstrap",
-    icon: "/media/framework-logos/bootstrap.png",
-  },
-  {
-    title: "Tailwind",
-    icon: "/media/framework-logos/tailwind-css.svg",
-  },
-  {
-    title: "Emotion",
-    icon: "https://emotion.sh/logo-96x96.png",
-  },
-  {
-    title: "React",
-    icon: "/media/framework-logos/React.png",
-  },
-  {
-    title: "React Router Dom",
-    icon: "/media/framework-logos/rr_logo_dark.svg",
-  },
-  {
-    title: "VITE",
-    icon: "https://vite.dev/logo.svg",
-  },
-  {
-    title: "Nextjs",
-    icon: "/media/framework-logos/Next.js.png",
-  },
-  {
-    title: "React Hook Form",
-    icon: "https://react-hook-form.com/images/logo/react-hook-form-logo-only.svg",
-  },
-  {
-    title: "Redux",
-    icon: "https://redux.js.org/img/redux.svg",
-  },
-  {
-    title: "Axios",
-    icon: "/media/framework-logos/axios.svg",
-  },
-  {
-    title: "SWR",
-    icon: "",
-  },
-  {
-    title: "Socket.io",
-    icon: "https://socket.io/images/logo-dark.svg",
-  },
-  {
-    title: "Bruno",
-    icon: "/media/framework-logos/bruno.svg",
-  },
-  {
-    title: "Postman",
-    icon: "https://voyager.postman.com/logo/postman-logo-icon-orange.svg",
-  },
-  {
-    title: "Formik",
-    icon: "",
-  },
-  {
-    title: "Zod",
-    icon: "/media/framework-logos/zod-logo-white.webp",
-  },
-  {
-    title: "Yup",
-    icon: "",
-  },
-  {
-    title: "Momentjs",
-    icon: "",
-  },
-  {
-    title: "Dayjs",
-    icon: "https://day.js.org/img/logo.png",
-  },
-  {
-    title: "React Hot Toast",
-    icon: "/media/framework-logos/react-hot-toast-logo.svg",
-  },
-  {
-    title: "Ant Design",
-    icon: "/media/framework-logos/ant-design.svg",
-  },
-  {
-    title: "Shadcn UI",
-    icon: "/media/framework-logos/shadcnui-logo.svg",
-  },
-  {
-    title: "Material UI",
-    icon: "/media/framework-logos/mui-logo.svg",
-  },
-  {
-    title: "Lucide icon",
-    icon: "https://lucide.dev/logo.dark.svg",
-  },
-  {
-    title: "Font Awsome icon",
-    icon: "/media/framework-logos/fontawesome-logo.svg",
-  },
-  {
-    title: "daisyUI",
-    icon: "https://img.daisyui.com/images/daisyui/mark-static.svg",
-  },
-  {
-    title: "Metronics Theme",
-    icon: "/media/logos/default-small.svg",
-  },
-  {
-    title: "ApexCharts",
-    icon: "https://apexcharts.com/wp-content/themes/apexcharts/img/apexcharts-logo-white-trimmed.svg",
-  },
-  {
-    title: "HighChart",
-    icon: "./media/framework-logos/highcharts.svg",
-  },
-  {
-    title: "Supabase",
-    icon: "/media/framework-logos/supabase-logo-icon.png",
-  },
-  {
-    title: "Cloudflare",
-    icon: "/media/framework-logos/cloudflare.png",
-  },
-  {
-    title: "Stripe",
-    icon: "/media/framework-logos/Stripe_Logo.webp",
-  },
-  {
-    title: "ngrok",
-    icon: "https://cdn.prod.website-files.com/63ed4bc7a4b189da942a6b8c/6411ffa0b395a44345ed2b1a_Frame%201.svg",
-  },
-  {
-    title: "qr.react",
-    icon: "",
-  },
+interface ToolCategory {
+	title: string
+	items: ToolItem[]
+}
+
+const categories: ToolCategory[] = [
+	{
+		title: "Core",
+		items: [
+			{ name: "TypeScript", slug: "typescript" },
+			{ name: "JavaScript", slug: "javascript" },
+			{ name: "HTML", slug: "html5" },
+			{ name: "CSS", slug: "css3" },
+		],
+	},
+	{
+		title: "Frameworks",
+		items: [
+			{ name: "React", slug: "react" },
+			{ name: "Next.js", slug: "nextdotjs" },
+			{ name: "Vue 2", slug: "vuedotjs" },
+			{ name: "Vuetify", slug: "vuetify" },
+			{ name: "Vite", slug: "vite" },
+			{ name: "React Router", slug: "reactrouter" },
+		],
+	},
+	{
+		title: "Styling & UI",
+		items: [
+			{ name: "Tailwind", slug: "tailwindcss" },
+			{ name: "shadcn/ui", slug: "shadcnui" },
+			{ name: "Material UI", slug: "mui" },
+			{ name: "Ant Design", slug: "antdesign" },
+			{ name: "daisyUI", slug: "daisyui" },
+		],
+	},
+	{
+		title: "State & data",
+		items: [
+			{ name: "Redux", slug: "redux" },
+			{ name: "Axios", slug: "axios" },
+			{ name: "Socket.io", slug: "socketdotio" },
+			{ name: "React Hook Form", slug: "reacthookform" },
+			{ name: "Zod", slug: "zod" },
+		],
+	},
+	{
+		title: "Backend & infra",
+		items: [
+			{ name: "Node.js", slug: "nodedotjs" },
+			{ name: "Express", slug: "express" },
+			{ name: "PostgreSQL", slug: "postgresql" },
+			{ name: "Kafka", slug: "apachekafka" },
+			{ name: "Redis", slug: "redis" },
+			{ name: "Docker", slug: "docker" },
+			{ name: "Supabase", slug: "supabase" },
+			{ name: "Cloudflare", slug: "cloudflare" },
+			{ name: "Stripe", slug: "stripe" },
+		],
+	},
+	{
+		title: "Visualisation",
+		items: [
+			{ name: "ApexCharts", icon: ChartColumn },
+			{ name: "Highcharts", src: "/media/framework-logos/highcharts.svg" },
+		],
+	},
 ]
 
 const Tools = () => {
-  if (tools.length === 0) return <>no tools</>
-
-  return (
-    <div id="tools" className="flex flex-col items-start">
-      <h1 className="html-tag sm:ml-4">{`<tools>`}</h1>
-      {/* <div className="grid grid-cols-3 md:grid-cols-8 gap-2 sm:x-12">
-        {tools.map((item: ToolProps, index: number) => {
-          return (
-            <div
-              key={index}
-              className="bg-slate-200 dark:bg-slate-800 flex flex-col items-center justify-center text-center p-5 rounded-xl hover:scale-105 transition-all duration-300 hover:shadow-lg hover:shadow-orange-400"
-            >
-              <Image alt={item.title} src={item.icon} width={45} height={45} />
-              <span className="text-xs sm:text-lg">{item.title}</span>
-            </div>
-          )
-        })}
-      </div> */}
-      <Marquee3D items={tools} />
-      <h1 className="html-tag sm:ml-4">{`</tools>`}</h1>
-    </div>
-  )
+	return (
+		<div id="tools" className="scroll-mt-24 flex flex-col items-start w-full">
+			<PfTag name="tools" className="mb-11 block" />
+			<h2 className="mb-8 font-mono font-bold tracking-[-0.035em] text-[clamp(2rem,4vw,3rem)]">
+				What I build with
+			</h2>
+			<div className="w-full grid grid-cols-1 nav:grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-px bg-pf-line border border-pf-line">
+				{categories.map((category) => (
+					<div key={category.title} className="bg-pf-bg px-7 pt-7 pb-8">
+						<div className="font-mono text-[11px] tracking-[0.14em] uppercase text-pf-accent mb-5">
+							{category.title}
+						</div>
+						<div className="flex flex-wrap gap-2">
+							{category.items.map((item) => {
+								const Icon = item.icon
+								return (
+									<span
+										key={item.name}
+										className="inline-flex items-center gap-2 px-3 py-[7px] border border-pf-line rounded-sm font-mono text-xs text-pf-body hover:border-pf-lineSoft hover:bg-pf-raise transition-colors"
+									>
+										{(item.slug || item.src) && (
+											<TechIcon slug={item.slug} src={item.src} />
+										)}
+										{Icon && <Icon className="w-3.5 h-3.5 shrink-0" />}
+										{item.name}
+									</span>
+								)
+							})}
+						</div>
+					</div>
+				))}
+			</div>
+			<PfTag name="tools" closing className="mt-12 block" />
+		</div>
+	)
 }
 
 export default Tools

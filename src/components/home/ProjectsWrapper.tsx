@@ -1,121 +1,84 @@
 "use client"
 
-import React, { useState } from "react"
-import getProjectsData, { ProjectProps, Responsibilities } from "./getProjects"
+import React from "react"
 import Image from "next/image"
-import ProjectDetailModal from "../common/ProjectDetailModal"
-import { Button } from "@/components/ui/button"
-import { cn } from "@/lib/utils"
-import { Github, Globe } from "lucide-react"
+import getProjectsData, { ProjectProps, Responsibilities } from "./getProjects"
+import PfTag from "@/components/common/PfTag"
 
-const PLACEHOLDER_IMG_SRC = "/media/misc/image-placeholder.svg"
-
-const ProjectCard = (props: {
-	item: ProjectProps
-	onView: () => void
-}): React.ReactNode => {
-	const { item, onView } = props
-	const [imgSrc, setImgSrc] = useState(item.previewImg || PLACEHOLDER_IMG_SRC)
+const ProjectCard = ({ item }: { item: ProjectProps }) => {
+	const hasShot = Boolean(item.previewImg)
+	const link = item.source.length > 0 ? item.source[0] : undefined
+	const linkLabel = link?.includes("github.com") ? "github" : "visit"
 
 	return (
-		<div className="flex flex-col gap-3 bg-slate-100 dark:bg-slate-800 dark:hover:bg-slate-700 border-2 border-slate-200 dark:border-slate-800 rounded-2xl shadow-sm hover:scale-105 transition-all duration-300 hover:shadow-lg overflow-hidden h-full">
-			<Image
-				alt={item.title}
-				src={imgSrc}
-				loading="lazy"
-				className="w-full h-[300px] object-cover"
-				width={200}
-				height={100}
-				onError={() => setImgSrc(PLACEHOLDER_IMG_SRC)}
-			/>
-			<div className="flex flex-col gap-2 p-4 flex-1">
-				<div className="flex flex-wrap gap-2">
-					{item.responsibilities.map((responsibility: Responsibilities) => {
-						return (
-							<span
-								key={responsibility}
-								className="text-sky-500 dark:text-sky-400 border border-sky-300 dark:border-sky-700 rounded-full px-2 py-1 text-sm"
-							>
-								{responsibility}
-							</span>
-						)
-					})}
-				</div>
-				<div>
-					<div className="flex items-center justify-between">
-						<span className="text-xl font-extrabold">{item.title}</span>
-					</div>
-					<div className="flex items-center justify-between">
-						<span className="text-sm font-base line-clamp-4">
-							{item.description}
+		<article className="flex flex-col border border-pf-line rounded-sm overflow-hidden bg-pf-panel hover:border-pf-muted transition-colors">
+			<div className="relative aspect-[16/10] border-b border-pf-line overflow-hidden bg-pf-raise">
+				{hasShot ? (
+					<Image
+						src={item.previewImg}
+						alt={item.title}
+						fill
+						loading="lazy"
+						className="object-cover object-left-top"
+					/>
+				) : (
+					<div className="pf-stripe absolute inset-0 flex items-center justify-center">
+						<span className="font-mono text-[11px] text-pf-muted bg-pf-bg px-3 py-1.5 rounded-sm">
+							under NDA
 						</span>
 					</div>
-				</div>
-				<div className="flex-1" />
-				<div className="flex gap-2">
-					{/* <Button
-						type="button"
-						variant="outline"
-						onClick={onView}
-						className="w-full"
-					>
-						Details
-					</Button> */}
-					{item.source.length > 0 &&
-						item.source.map((url) => {
-							const isGithub = url.includes("github")
-							return (
-								<Button
-									key={url}
-									type="button"
-									onClick={() => window.open(url, "_blank")}
-									className={cn("w-full")}
-								>
-									{isGithub ? (
-										<>
-											<Github /> Github
-										</>
-									) : (
-										<>
-											<Globe /> Visit
-										</>
-									)}
-								</Button>
-							)
-						})}
-				</div>
+				)}
 			</div>
-		</div>
+			<div className="flex flex-col gap-3 flex-1 px-6 pt-6 pb-[26px]">
+				<div className="flex flex-wrap gap-1.5">
+					{item.responsibilities.map((responsibility: Responsibilities) => (
+						<span
+							key={responsibility}
+							className="font-mono text-[10px] tracking-[0.1em] uppercase text-pf-amber border border-pf-lineSoft rounded-sm px-2 py-1"
+						>
+							{responsibility}
+						</span>
+					))}
+				</div>
+				<h3 className="mt-0.5 text-[22px] tracking-[-0.02em] font-bold">
+					{item.title}
+				</h3>
+				<p className="text-[14.5px] leading-[1.6] text-pf-muted flex-1">
+					{item.description}
+				</p>
+				{link && (
+					<a
+						href={link}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="font-mono text-xs text-pf-accent hover:text-pf-accentHi mt-1.5"
+					>
+						{linkLabel} ↗
+					</a>
+				)}
+			</div>
+		</article>
 	)
 }
 
 const ProjectsWrapper = () => {
-	const [show, setShow] = useState<boolean>(false)
-	const [selectedProject, setSelectedProject] = useState<ProjectProps | null>(
-		null
-	)
-
 	return (
-		<div id="projects">
-			<h1 className="html-tag sm:ml-4">{`<projects>`}</h1>
-			<section className="flex flex-col gap-10 sm:px-12">
-				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 sm:px-4 md:px-0">
-					{getProjectsData?.map((item: ProjectProps, index: number) => {
-						return (
-							<ProjectCard
-								key={index}
-								item={item}
-								onView={() => {
-									setShow(true)
-									setSelectedProject(item)
-								}}
-							/>
-						)
-					})}
-				</div>
-			</section>
-			<h1 className="html-tag sm:ml-4">{`</projects>`}</h1>
-			<ProjectDetailModal show={[show, setShow]} project={selectedProject} />
+		<div id="projects" className="scroll-mt-24">
+			<PfTag name="projects" className="mb-11 block" />
+			<div className="flex items-baseline justify-between flex-wrap gap-4 mb-8">
+				<h2 className="font-mono font-bold tracking-[-0.035em] text-[clamp(2rem,4vw,3rem)]">
+					Selected work
+				</h2>
+				<p className="font-mono text-xs text-pf-dim">
+					{getProjectsData.length} products
+				</p>
+			</div>
+			<div className="grid grid-cols-1 nav:grid-cols-[repeat(auto-fit,minmax(330px,1fr))] gap-7">
+				{getProjectsData.map((item: ProjectProps, index: number) => (
+					<ProjectCard key={index} item={item} />
+				))}
+			</div>
+			<PfTag name="projects" closing className="mt-12 block" />
 		</div>
 	)
 }

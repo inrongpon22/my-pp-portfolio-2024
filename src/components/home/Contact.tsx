@@ -1,111 +1,55 @@
 "use client"
 
 import React from "react"
-import Link from "next/link"
-import {
-  Facebook,
-  Github,
-  Instagram,
-  Linkedin,
-  LinkedinIcon,
-  Mail,
-  Twitter,
-} from "lucide-react"
 
-const contactIcons = [
-  {
-    title: "Facebook",
-    icon: <Facebook />,
-    url: "https://www.facebook.com/",
-  },
-  {
-    title: "Instagram",
-    icon: <Instagram />,
-    url: "https://www.instagram.com/",
-  },
-  {
-    title: "Twitter",
-    icon: <Twitter />,
-    url: "https://twitter.com/",
-  },
-  {
-    title: "Linkedin",
-    icon: <Linkedin />,
-    url: "https://linkedin.com",
-  },
+const contactLinks = [
+	{
+		label: "email",
+		href: "mailto:inrongpon.phanupong2@gmail.com",
+		value: "inrongpon.phanupong2@gmail.com",
+	},
+	{
+		label: "github",
+		href: "https://github.com/inrongpon22",
+		value: "@inrongpon22",
+	},
+	{
+		label: "linkedin",
+		href: "https://www.linkedin.com/in/phanupong-inrongpon-6aa97b25a",
+		value: "phanupong-inrongpon",
+	},
 ]
 
 const Contact = () => {
-  return (
-    <section id="contact" className="px-4 sm:px-10 pt-10">
-      <span className="text-3xl sm:text-6xl font-bold">Phanupong Inrongpon</span>
-
-      <hr className="border-white my-4" />
-      <div className="leading-loose space-y-4">
-        <h2 className="text-xl md:text-2xl font-bold text-white">I develop websites and web applications.</h2>
-        <p className="text-base md:text-lg font-light text-white">
-          As a passionate frontend developer, I thrive on bringing ideas to life
-          through interactive and visually appealing user interfaces. My
-          enthusiasm for crafting seamless digital experiences drives me to
-          continuously learn new technologies and stay updated with the latest
-          trends in web development. Currently based in Chiang Mai, I am
-          dedicated to delivering high-quality solutions that make an impact and
-          provide exceptional value to users.
-        </p>
-
-        <div className="text-sm sm:text-base">
-          <p className="text-2xl font-bold text-white underline">Contact</p>
-          <div className="flex gap-4 pt-4">
-            <a
-              href="mailto:inrongpon.phanupong2@gmail.com"
-              target="_blank"
-              className="flex items-center gap-2 bg-orange-400 p-2 rounded-md hover:bg-orange-500 transition-all duration-300"
-            >
-              <Mail className="text-white" />
-            </a>
-            <a
-              href="https://github.com/inrongpon22"
-              target="_blank"
-              className="flex items-center gap-2 bg-orange-400 p-2 rounded-md hover:bg-orange-500 transition-all duration-300"
-            >
-              <Github className="text-white" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/phanupong-inrongpon-6aa97b25a"
-              target="_blank"
-              className="flex items-center gap-2 bg-orange-400 p-2 rounded-md hover:bg-orange-500 transition-all duration-300"
-            >
-              <LinkedinIcon className="text-white" />
-            </a>
-          </div>
-          {/* <ul>
-            <li className="flex items-center gap-2">
-              <span className="text-orange-400 font-bold text-sm sm:text-base">Email:</span>
-              <Link
-                href="mailto:inrongpon.phanupong2@gmail.com"
-                target="_blank"
-                className="hover:text-orange-400 transition-all duration-300"
-              >
-                inrongpon.phanupong2@gmail.com
-              </Link>
-            </li>
-            <li className="flex items-center gap-2">
-              <span className="text-orange-400 font-bold text-sm sm:text-base">Github:</span>
-              <Link
-                href="https://github.com/inrongpon22"
-                target="_blank"
-                className="hover:text-orange-400 transition-all duration-300"
-              >
-                Github
-              </Link>
-            </li>
-          </ul> */}
-        </div>
-      </div>
-      {/* <ThemeSwitcher /> */}
-      <hr className="border-white my-4 sm:my-8" />
-    </section>
-  )
+	return (
+		<section id="contact" className="scroll-mt-24 grid grid-cols-1 nav:grid-cols-2 gap-14">
+			<div>
+				<h2 className="mb-6 font-mono font-bold tracking-[-0.035em] leading-[1.1] text-[clamp(1.875rem,3.6vw,2.625rem)]">
+					I develop websites and web applications.
+				</h2>
+				<p className="max-w-[480px] text-base leading-[1.7] text-pf-muted">
+					Based in Chiang Mai, I design and code clean, reliable apps from front to back. I love picking up new tools and building things that actually last in the real world.
+				</p>
+			</div>
+			<div className="flex flex-col gap-0.5 font-mono text-sm">
+				<div className="text-[11px] tracking-[0.14em] uppercase text-pf-dim mb-[18px]">
+					Contact
+				</div>
+				{contactLinks.map((item) => (
+					<a
+						key={item.label}
+						href={item.href}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex justify-between gap-4 py-3.5 border-b border-pf-line text-pf-ink hover:text-pf-accent transition-colors"
+					>
+						<span>{item.label}</span>
+						<span className="text-pf-dim">{item.value}</span>
+					</a>
+				))}
+			</div>
+		</section>
+	)
 }
 
 export default Contact

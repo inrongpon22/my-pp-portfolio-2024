@@ -1,54 +1,41 @@
-'use client'
+"use client"
 
-import React from 'react'
+import React from "react"
 
-interface MenuProps {
-  key: string
-  href: string
-  title: string
+interface NavItem {
+	key: string
+	href: string
+	title: string
 }
 
-const HeaderWrapper = () => {
-  const items: MenuProps[] = [
-    {
-      key: 'home',
-      href: '#home',
-      title: 'Home',
-    },
-    {
-      key: 'about',
-      href: '#about',
-      title: 'About me',
-    },
-    {
-      key: 'projects',
-      href: '#projects',
-      title: 'Projects',
-    },
-    {
-      key: 'contact',
-      href: '#contact',
-      title: 'Contact',
-    },
-  ]
+const items: NavItem[] = [
+	{ key: "tools", href: "#tools", title: "tools" },
+	{ key: "work-experience", href: "#work-experience", title: "work-experience" },
+	{ key: "projects", href: "#projects", title: "projects" },
+	{ key: "contact", href: "#contact", title: "contact" },
+]
 
-  return (
-    <div className='w-2/3 flex justify-between items-center bg-[#333] text-white py-2 px-4 my-5 rounded-full fixed z-50'>
-      <div className='w-full flex items-center justify-center'>
-        <nav className='flex gap-6'>
-          {items.map((item: MenuProps) => (
-            <a
-              key={item.key}
-              href={item.href}
-              className='text-white hover:text-orange-400 transition-colors duration-300 cursor-pointer'
-            >
-              {item.title}
-            </a>
-          ))}
-        </nav>
-      </div>
-    </div>
-  )
+const HeaderWrapper = () => {
+	return (
+		<header className="sticky top-0 z-20 border-b border-pf-line bg-pf-bg/90 backdrop-blur">
+			<div className="max-w-[1160px] mx-auto flex items-center justify-between gap-5 py-[26px] px-4 font-mono">
+				<a href="#home" className="text-[13px] tracking-[0.02em] text-pf-ink">
+					phanupong<span className="text-pf-accent">.dev</span>
+				</a>
+				<nav className="hidden nav:flex gap-6 text-xs">
+					{items.map((item) => (
+						<a
+							key={item.key}
+							href={item.href}
+							className="text-pf-muted hover:text-pf-ink transition-colors"
+						>
+							{item.title}
+						</a>
+					))}
+				</nav>
+			</div>
+		</header>
+	)
 }
 
 export default HeaderWrapper
